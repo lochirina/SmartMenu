@@ -1,0 +1,71 @@
+from PyQt5 import QtWidgets, uic, QtCore
+import sys
+
+from PyQt5.QtSql import QSqlDatabase, QSqlTableModel
+
+from constructor_add_dish_window import AddDishWindow
+from constructor_add_prod_window import *
+from db_controller import *
+
+class MainWindow:
+    def __init__(self):
+        self.app = QtWidgets.QApplication([])
+        self.win = uic.loadUi("res/ui/main.ui")
+        self.db_controller = DatabaseController()
+        self.setup_products_table()
+
+        # Подключаем обработчики нажатий кнопок
+        self.win.addProdPushButton.clicked.connect(self.open_add_prod)
+        self.win.addMenuPushButton.clicked.connect(self.open_add_menu)
+        self.win.addDishPushButton.clicked.connect(self.open_add_dish)
+
+        self.win.show()
+        sys.exit(self.app.exec())
+
+    def open_add_prod(self):
+        self.add_prod_window = AddProductWindow()
+        self.add_prod_window.parent = self  # Передаем ссылку на главное окно
+
+    def open_add_menu(self):
+        self.add_menu_window = uic.loadUi("res/ui/add_menu.ui")
+        self.add_menu_window.show()
+
+    def open_add_dish(self):
+        self.add_dish_window = AddDishWindow()
+        self.add_dish_window.parent = self # Передаем ссылку на главное окно
+
+    def setup_products_table(self):
+        # Создаем подключение к базе данных через QtSql
+        db = QSqlDatabase.addDatabase('QSQLITE')
+        db.setDatabaseName('smart_menu.db')
+        db.open()
+
+        # Создаем модель для таблицы
+        self.model = QSqlTableModel()
+        self.model.setTable('products')
+
+        # Устанавливаем заголовки столбцов
+        # self.model.setHeaderData(1, QtCore.Qt.Horizontal, "Название продукта")
+
+        # Выбираем только столбец с названием
+        self.model.setEditStrategy(QSqlTableModel.OnFieldChange)
+        self.model.select()
+
+        # Устанавливаем модель для таблицы
+        self.win.prodListTableView.setModel(self.model)
+
+        # Скрываем все столбцы кроме названия продукта
+        for column in range(self.model.columnCount()):
+            if column != 1:  # 1 - индекс столбца name в таблице products
+                self.win.prodListTableView.hideColumn(column)
+
+        # Растягиваем столбец на всю ширину таблицы
+        self.win.prodListTableView.horizontalHeader().setSectionResizeMode(
+            1, QtWidgets.QHeaderView.Stretch)
+
+    def refresh_products_table(self):
+        self.model.select()
+
+
+if __name__ == '__main__':
+    MainWindow()
