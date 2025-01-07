@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>542</width>
+    <height>218</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="verticalFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>540</width>
+      <height>220</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>540</width>
+      <height>220</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>540</width>
+      <height>220</height>
+     </size>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="leftMargin">
+      <number>22</number>
+     </property>
+     <property name="topMargin">
+      <number>11</number>
+     </property>
+     <property name="rightMargin">
+      <number>22</number>
+     </property>
+     <property name="bottomMargin">
+      <number>22</number>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="addStorageHeaderLabel">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+
+width: 435px;
+height: 24px;
+margin-top: 8px;
+margin-bottom:8px;
+
+font-size: 20px;
+font-family: Inter, &quot;Extra Bold&quot;;
+font-weight: 800;
+text-align: left;
+vertical-align: top</string>
+         </property>
+         <property name="text">
+          <string>Заполните информацию о покупке</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="storeHorizontalLayout_3">
+         <item>
+          <widget class="QComboBox" name="storeComboBox">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="accessibleName">
+            <string/>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+    background-color: #ffffff; /* Цвет фона */
+    border-radius: 4%; /* Радиус границы */
+    border: 2px solid rgba(100, 100, 100, 25); /* Граница */
+    color: #2d2c2c; /* Цвет текста */
+    height: 32px; /* Высота */
+    padding-left: 8px; /* Отступ для текста */
+    font-size: 14px; /* Размер шрифта */
+    font-family: Inter; /* Шрифт */
+}
+
+QComboBox::drop-down {
+    width: 32px; /* Ширина кнопки */
+    border: none; /* Убираем границы у кнопки с треугольником */
+}
+
+QComboBox::indicator {
+    width: 0px;  /* Убираем стандартные индикаторы */
+    height: 0px; /* Убираем стандартные индикаторы */
+}
+
+QComboBox::drop-down:after {
+    content: ''; /* Создаем псевдоэлемент для треугольника */
+    position: absolute;
+    right: 10px; /* Положение треугольника (по желанию) */
+    top: 50%; /* Центрируем по вертикали */
+    transform: translateY(-50%); /* Центрирование */
+    border-left: 5px solid transparent; /* Левый делитель */
+    border-right: 5px solid transparent; /* Правый делитель */
+    border-top: 5px solid #2d2c2c; /* Цвет треугольника */
+}
+
+QComboBox:pressed {
+    background-color: #AAAAFF; /* Цвет при нажатии */
+}</string>
+           </property>
+           <property name="currentText">
+            <string>Gjvb,lj</string>
+           </property>
+           <property name="duplicatesEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Gjvb,lj</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="storeSpinBox">
+           <property name="minimumSize">
+            <size>
+             <width>92</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>92</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:#ffffff;
+border-radius:4%;
+border:2px solid rgba(100, 100, 100, 25);
+
+color: #2d2c2c;
+
+width:40px;
+height:32px;
+
+padding-left: 8px;
+position:absolute;
+text-align:left;
+vertical-align:text-top;
+
+font-size:14px;
+font-family:Inter;
+left:12px;
+top:8px;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="unitStoregaItemLoabel">
+           <property name="styleSheet">
+            <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+font-family:Inter;
+line-height:auto;
+border-style:hidden;
+outline:none;
+
+min-width: 56px;
+max-width: 56px;</string>
+           </property>
+           <property name="text">
+            <string>ед.</string>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="purchaseHorizontalLayout">
+         <item>
+          <widget class="QLabel" name="spaceLabel">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="purchaseDateLabel">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: none;
+border: none;
+
+text-align:left;
+vertical-align:text-top;
+font-size:12px;
+font-family:Inter;
+line-height:auto;
+border-style:hidden;
+outline:none;
+
+color:#30353b;
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+font-family:Inter;
+line-height:auto;
+border-style:hidden;
+outline:none;
+width:435px;</string>
+           </property>
+           <property name="text">
+            <string>Дата покупки:</string>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="purchaseDateDateEdit">
+           <property name="styleSheet">
+            <string notr="true">background-color:#ffffff;
+border-radius:4%;
+border:2px solid rgba(100, 100, 100, 25);
+
+color: #2d2c2c;
+
+width:360px;
+height:32px;
+
+padding-left: 8px;
+position:absolute;
+text-align:left;
+vertical-align:text-top;
+
+font-size:14px;
+font-family:Inter;
+left:12px;
+top:8px;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="actionsStorageHorizontalLayout">
+         <item>
+          <widget class="QPushButton" name="addStoragePushButton">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+height:32px;
+width:auto;
+margin-top: 16px;
+
+color: #30353B;
+background: #ADDC81;
+
+text-align:center;
+vertical-align:center;
+font-size:12px;
+font-family:Inter;
+line-height:auto;
+font-weight: bold;
+
+border-radius:4%;
+border: 2 px solid #ADFF81;
+}
+
+QPushButton:hover {
+background: #AAAA81;
+}
+
+QPushButton:pressed{
+background: #AAAAFF;
+}
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>Сохранить</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="cancelStorageItemPushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>48</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>48</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+height:32px;
+width:auto;
+
+color: #30353B;
+background: #ADDC81;
+margin-top: 16px;
+
+text-align:center;
+vertical-align:center;
+font-size:12px;
+font-family:Inter;
+line-height:auto;
+font-weight: bold;
+
+border-radius:4%;
+}
+
+QPushButton:hover {
+background: #AAAA81;
+border: 2px solid rgba(146, 146, 120, 75);
+}
+
+QPushButton:pressed{
+background: #AAAAFF;
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../icons/bx_trash.svg</normaloff>../icons/bx_trash.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

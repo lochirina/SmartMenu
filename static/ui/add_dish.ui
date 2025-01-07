@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>540</width>
+    <height>618</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>540</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>540</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Умное меню - Добавить блюдо</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="verticalFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>542</width>
+      <height>608</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="leftMargin">
+      <number>22</number>
+     </property>
+     <property name="topMargin">
+      <number>11</number>
+     </property>
+     <property name="rightMargin">
+      <number>22</number>
+     </property>
+     <property name="bottomMargin">
+      <number>22</number>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="addDishHeaderLabel">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">margin-top: 8px;
+margin-bottom:8px;
+  width: 435px;
+  height: 24px;
+  color: #2d2c2c;
+  font-size: 20px;
+  font-family: Inter, &quot;Extra Bold&quot;;
+  font-weight: 800;
+  text-align: left;
+  vertical-align: top</string>
+         </property>
+         <property name="text">
+          <string>Заполните информацию о блюде</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="nameOfDishLineEdit">
+         <property name="styleSheet">
+          <string notr="true">background-color:#ffffff;
+border-radius:4%;
+border:2px solid rgba(100, 100, 100, 25);
+
+color: #2d2c2c;
+
+width:360px;
+height:32px;
+
+padding-left: 8px;
+position:absolute;
+text-align:left;
+vertical-align:text-top;
+
+font-size:14px;
+font-family:Inter;
+left:12px;
+top:8px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="maxLength">
+          <number>32770</number>
+         </property>
+         <property name="cursorPosition">
+          <number>0</number>
+         </property>
+         <property name="placeholderText">
+          <string>Введите название блюда</string>
+         </property>
+         <property name="cursorMoveStyle">
+          <enum>Qt::LogicalMoveStyle</enum>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="infoDishPlainTextEdit">
+         <property name="styleSheet">
+          <string notr="true">background-color:#ffffff;
+border-radius:4%;
+border:2px solid rgba(100, 100, 100, 25);
+
+color: #2d2c2c;
+
+width:360px;
+height:32px;
+
+padding: 8px;
+position:absolute;
+text-align:left;
+vertical-align:text-top;
+
+font-size:14px;
+font-family:Inter;
+left:12px;
+top:8px;</string>
+         </property>
+         <property name="plainText">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Введите описание блюда</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="calculateAutoNutritValuecheckBox">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">margin-top: 8px;
+background-color: none;
+border: none;
+
+text-align:left;
+vertical-align:text-top;
+font-size:12px;
+font-family:Inter;
+line-height:auto;
+border-style:hidden;
+outline:none;
+
+color:#30353b;
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+font-family:Inter;
+line-height:auto;
+border-style:hidden;
+outline:none;
+width:435px;</string>
+         </property>
+         <property name="text">
+          <string>Заполнять калории автоматически</string>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="nutritiansHorizontalLayout">
+         <item>
+          <widget class="QLineEdit" name="kaloriesLineEdit">
+           <property name="styleSheet">
+            <string notr="true">background-color:#ffffff;
+border-radius:4%;
+border:2px solid rgba(100, 100, 100, 25);
+
+color: #2d2c2c;
+
+width:360px;
+height:32px;
+
+padding-left: 8px;
+position:absolute;
+text-align:left;
+vertical-align:text-top;
+
+font-size:14px;
+font-family:Inter;
+left:12px;
+top:8px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="cursorPosition">
+            <number>0</number>
+           </property>
+           <property name="placeholderText">
+            <string>Введите количество калорий</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="proteinsLineEdit">
+           <property name="styleSheet">
+            <string notr="true">background-color:#ffffff;
+border-radius:4%;
+border:2px solid rgba(100, 100, 100, 25);
+
+color: #2d2c2c;
+
+height:32px;
+
+padding-left: 8px;
+position:absolute;
+text-align:left;
+vertical-align:text-top;
+
+font-size:14px;
+font-family:Inter;
+left:12px;
+top:8px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="cursorPosition">
+            <number>0</number>
+           </property>
+           <property name="placeholderText">
+            <string>Б:</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="fatsLineEdit">
+           <property name="styleSheet">
+            <string notr="true">background-color:#ffffff;
+border-radius:4%;
+border:2px solid rgba(100, 100, 100, 25);
+
+color: #2d2c2c;
+
+height:32px;
+
+padding-left: 8px;
+position:absolute;
+text-align:left;
+vertical-align:text-top;
+
+font-size:14px;
+font-family:Inter;
+left:12px;
+top:8px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="cursorPosition">
+            <number>0</number>
+           </property>
+           <property name="placeholderText">
+            <string>Ж:</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="carbohLineEdit">
+           <property name="styleSheet">
+            <string notr="true">background-color:#ffffff;
+border-radius:4%;
+border:2px solid rgba(100, 100, 100, 25);
+
+color: #2d2c2c;
+
+height:32px;
+
+padding-left: 8px;
+position:absolute;
+text-align:left;
+vertical-align:text-top;
+
+font-size:14px;
+font-family:Inter;
+left:12px;
+top:8px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="cursorPosition">
+            <number>0</number>
+           </property>
+           <property name="placeholderText">
+            <string>У:</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="ingredientsHeaderLabel">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">margin-top: 8px;
+margin-bottom:8px;
+  width: 435px;
+  height: 24px;
+  color: #2d2c2c;
+  font-size: 20px;
+  font-family: Inter, &quot;Extra Bold&quot;;
+  font-weight: 800;
+  text-align: left;
+  vertical-align: top</string>
+         </property>
+         <property name="text">
+          <string>Ингредиенты:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="ingrHorizontalLayout1">
+         <item>
+          <widget class="QComboBox" name="ingredientComboBox_1">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="accessibleName">
+            <string/>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">                QComboBox {
+                    border: 2px solid rgba(100, 100, 100, 25);
+                    color: #2d2c2c;
+                    border-radius: 4%;
+                    padding: 1px 18px 1px 3px;
+                    max-height: 32px;
+                    min-height: 32px;
+                    font-size: 14px; 
+                    font-family: Inter; 
+                    padding-left: 8px;
+                }
+                QComboBox::drop-down {
+                    border-left-width: 1px;
+                    border-left-color: gray;
+                    border-left-style: none;
+                    border-top-right-radius: 4%;
+                    border-bottom-right-radius: 4%;
+                    font-size: 14px; 
+                    font-family: Inter;
+                    padding-left: 8px; 
+                }</string>
+           </property>
+           <property name="currentText">
+            <string>Помидор</string>
+           </property>
+           <property name="duplicatesEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Помидор</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="countIngredientsSpinBox_1">
+           <property name="minimumSize">
+            <size>
+             <width>86</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>86</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">                QSpinBox {
+                    border: 2px solid rgba(100, 100, 100, 25);
+                    color: #2d2c2c;
+                    border-radius: 4%;
+                    padding: 1px 18px 1px 3px;
+                    height: 32px;
+                    min-width: 56px;
+                    max-width: 56px;
+                    font-size: 14px; 
+                    font-family: Inter; 
+                    padding-left: 8px;
+                }</string>
+           </property>
+           <property name="value">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="unitIngredLoabel_1">
+           <property name="styleSheet">
+            <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+font-family:Inter;
+line-height:auto;
+border-style:hidden;
+outline:none;
+
+min-width: 56px;
+max-width: 56px;</string>
+           </property>
+           <property name="text">
+            <string>ед.</string>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="ingrHorizontalLayout2">
+         <item>
+          <widget class="QComboBox" name="ingredientComboBox_2">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="accessibleName">
+            <string/>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">                QComboBox {
+                    border: 2px solid rgba(100, 100, 100, 25);
+                    color: #2d2c2c;
+                    border-radius: 4%;
+                    padding: 1px 18px 1px 3px;
+                    max-height: 32px;
+                    min-height: 32px;
+                    font-size: 14px; 
+                    font-family: Inter; 
+                    padding-left: 8px;
+                }
+                QComboBox::drop-down {
+                    border-left-width: 1px;
+                    border-left-color: gray;
+                    border-left-style: none;
+                    border-top-right-radius: 4%;
+                    border-bottom-right-radius: 4%;
+                    font-size: 14px; 
+                    font-family: Inter;
+                    padding-left: 8px; 
+                }</string>
+           </property>
+           <property name="currentText">
+            <string>Помидор</string>
+           </property>
+           <property name="duplicatesEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Помидор</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="countIngredientsSpinBox_2">
+           <property name="minimumSize">
+            <size>
+             <width>86</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>86</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">                QSpinBox {
+                    border: 2px solid rgba(100, 100, 100, 25);
+                    color: #2d2c2c;
+                    border-radius: 4%;
+                    padding: 1px 18px 1px 3px;
+                    height: 32px;
+                    min-width: 56px;
+                    max-width: 56px;
+                    font-size: 14px; 
+                    font-family: Inter; 
+                    padding-left: 8px;
+                }</string>
+           </property>
+           <property name="value">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="unitIngredLoabel_2">
+           <property name="styleSheet">
+            <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+font-family:Inter;
+line-height:auto;
+border-style:hidden;
+outline:none;
+
+min-width: 56px;
+max-width: 56px;</string>
+           </property>
+           <property name="text">
+            <string>ед.</string>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="addDishPushButton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+height:32px;
+width:auto;
+
+color: #30353B;
+background: #ADDC81;
+
+text-align:center;
+vertical-align:center;
+font-size:12px;
+font-family:Inter;
+line-height:auto;
+font-weight: bold;
+
+border-radius:4%;
+border: 2 px solid #ADFF81;
+}
+
+QPushButton:hover {
+background: #AAAA81;
+}
+
+QPushButton:pressed{
+background: #AAAAFF;
+}
+
+
+</string>
+         </property>
+         <property name="text">
+          <string>Добавить</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
