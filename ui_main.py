@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui_main.ui'
+# Form implementation generated from reading ui file 'main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -17,20 +17,29 @@ class Ui_MainWindow(object):
         MainWindow.resize(1442, 695)
         MainWindow.setMinimumSize(QtCore.QSize(1442, 695))
         MainWindow.setMaximumSize(QtCore.QSize(1442, 695))
+        font = QtGui.QFont()
+        font.setFamily("STXihei")
+        font.setPointSize(8)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        MainWindow.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../icons/bx_dish.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../img/catCook.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, \n"
 "stop:0  rgba(251,239,195,1), \n"
 " \n"
 "stop:0.6 rgba(230,230,230,1)\n"
 "\n"
-"stop:0.99 rgba(214,237,192,1));")
+"stop:0.99 rgba(214,237,192,1));\n"
+"\n"
+"font: 8pt \"STXihei\";")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
         self.products_frame = QtWidgets.QFrame(self.centralwidget)
-        self.products_frame.setGeometry(QtCore.QRect(1150, 30, 261, 241))
+        self.products_frame.setGeometry(QtCore.QRect(1150, 30, 261, 281))
         self.products_frame.setStyleSheet("background-color: rgba(255, 255, 255, 30%);\n"
 "border: 1px solid  rgba(255, 255, 255, 40%);\n"
 "border-radius: 10%;\n"
@@ -52,8 +61,8 @@ class Ui_MainWindow(object):
 "width: 435px;\n"
 "height: 24px;\n"
 "\n"
-"font-size: 20px;\n"
-"font-family: Inter, \"Extra Bold\";\n"
+"font: 16pt \"Extra Bold\";\n"
+"\n"
 "font-weight: 800;\n"
 "text-align: left;\n"
 "vertical-align: top")
@@ -75,7 +84,7 @@ class Ui_MainWindow(object):
 "border-radius: 2%;")
         self.sortProdPushButton.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../../static/img/bx_sort-a-z.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("../img/bx_sort-a-z.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.sortProdPushButton.setIcon(icon1)
         self.sortProdPushButton.setIconSize(QtCore.QSize(24, 24))
         self.sortProdPushButton.setObjectName("sortProdPushButton")
@@ -83,11 +92,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addLayout(self.headerProdHorizontalLayout)
         self.prodListTableView = QtWidgets.QTableView(self.products_frame)
         self.prodListTableView.setStyleSheet("QTableView{\n"
-"margin-top: 8px;\n"
 "background-color: rgba(255, 255, 255, 50);\n"
 "border: 3px solid rgba(255, 255, 255, 75);\n"
-"border-top-left-radius: 0%;\n"
-"border-top-right-radius: 0%;\n"
+"margin-top: 8px;\n"
 "}\n"
 "\n"
 "QTableView::section {\n"
@@ -104,7 +111,9 @@ class Ui_MainWindow(object):
 "QTableView::item:selected {\n"
 "border-style: none;\n"
 "border-bottom: rgba(255, 255, 255, 50);\n"
+"background-color: rgba(255, 255, 255, 85);\n"
 "}")
+        self.prodListTableView.setShowGrid(False)
         self.prodListTableView.setObjectName("prodListTableView")
         self.verticalLayout_4.addWidget(self.prodListTableView)
         self.actionsProdHorizontalLayout = QtWidgets.QHBoxLayout()
@@ -144,7 +153,7 @@ class Ui_MainWindow(object):
 "}")
         self.editProdPushButton.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("../../static/img/bx_edit.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("../img/bx_edit.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.editProdPushButton.setIcon(icon2)
         self.editProdPushButton.setIconSize(QtCore.QSize(24, 24))
         self.editProdPushButton.setObjectName("editProdPushButton")
@@ -160,7 +169,6 @@ class Ui_MainWindow(object):
 "text-align:center;\n"
 "vertical-align:center;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "font-weight: bold;\n"
 "\n"
@@ -214,64 +222,14 @@ class Ui_MainWindow(object):
 "}")
         self.deliteProdPushButton.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("../../static/img/bx_trash.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("../img/bx_trash.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.deliteProdPushButton.setIcon(icon3)
         self.deliteProdPushButton.setIconSize(QtCore.QSize(24, 24))
         self.deliteProdPushButton.setObjectName("deliteProdPushButton")
         self.actionsProdHorizontalLayout.addWidget(self.deliteProdPushButton)
         self.verticalLayout_4.addLayout(self.actionsProdHorizontalLayout)
-        self.recomends_frame = QtWidgets.QFrame(self.centralwidget)
-        self.recomends_frame.setGeometry(QtCore.QRect(30, 340, 271, 299))
-        self.recomends_frame.setStyleSheet("background-color: rgba(255, 255, 255, 30%);\n"
-"border: 1px solid  rgba(255, 255, 255, 40%);\n"
-"border-radius: 10%;\n"
-"\n"
-"")
-        self.recomends_frame.setObjectName("recomends_frame")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.recomends_frame)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.recomHeaderLabel = QtWidgets.QLabel(self.recomends_frame)
-        self.recomHeaderLabel.setEnabled(True)
-        self.recomHeaderLabel.setMinimumSize(QtCore.QSize(0, 24))
-        self.recomHeaderLabel.setMaximumSize(QtCore.QSize(16777215, 24))
-        self.recomHeaderLabel.setStyleSheet("background-color: none;\n"
-"color: #2d2c2c;\n"
-"border:none;\n"
-"\n"
-"width: 435px;\n"
-"height: 24px;\n"
-"\n"
-"font-size: 20px;\n"
-"font-family: Inter, \"Extra Bold\";\n"
-"font-weight: 800;\n"
-"text-align: left;\n"
-"vertical-align: top")
-        self.recomHeaderLabel.setObjectName("recomHeaderLabel")
-        self.verticalLayout_3.addWidget(self.recomHeaderLabel)
-        self.infoRecomLabel = QtWidgets.QLabel(self.recomends_frame)
-        self.infoRecomLabel.setStyleSheet("background-color: none;\n"
-"color: #2d2c2c;\n"
-"border:none;\n"
-"margin-top: 8px;\n"
-"margin-bottom:8px;\n"
-"\n"
-"text-align:left;\n"
-"vertical-align:text-top;\n"
-"font-size:14px;\n"
-"font-family:Inter;\n"
-"line-height:auto;\n"
-"border-style:hidden;\n"
-"outline:none;\n"
-"width:435px;")
-        self.infoRecomLabel.setScaledContents(False)
-        self.infoRecomLabel.setWordWrap(True)
-        self.infoRecomLabel.setObjectName("infoRecomLabel")
-        self.verticalLayout_3.addWidget(self.infoRecomLabel)
-        self.recomendsListTableView = QtWidgets.QTableView(self.recomends_frame)
-        self.recomendsListTableView.setObjectName("recomendsListTableView")
-        self.verticalLayout_3.addWidget(self.recomendsListTableView)
         self.storage_frame = QtWidgets.QFrame(self.centralwidget)
-        self.storage_frame.setGeometry(QtCore.QRect(30, 30, 271, 299))
+        self.storage_frame.setGeometry(QtCore.QRect(30, 30, 271, 491))
         self.storage_frame.setStyleSheet("background-color: rgba(255, 255, 255, 30%);\n"
 "border: 1px solid  rgba(255, 255, 255, 40%);\n"
 "border-radius: 10%;\n"
@@ -293,8 +251,8 @@ class Ui_MainWindow(object):
 "width: 435px;\n"
 "height: 24px;\n"
 "\n"
-"font-size: 20px;\n"
-"font-family: Inter, \"Extra Bold\";\n"
+"font: 16pt \"Extra Bold\";\n"
+"\n"
 "font-weight: 800;\n"
 "text-align: left;\n"
 "vertical-align: top")
@@ -335,7 +293,7 @@ class Ui_MainWindow(object):
 "border-radius: 2%;")
         self.sortStorePushButton_1_n.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("../../static/img/bx_sort-1-n.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("../img/bx_sort-1-n.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.sortStorePushButton_1_n.setIcon(icon4)
         self.sortStorePushButton_1_n.setIconSize(QtCore.QSize(24, 24))
         self.sortStorePushButton_1_n.setObjectName("sortStorePushButton_1_n")
@@ -420,7 +378,6 @@ class Ui_MainWindow(object):
 "text-align:center;\n"
 "vertical-align:center;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "font-weight: bold;\n"
 "\n"
@@ -481,7 +438,7 @@ class Ui_MainWindow(object):
         self.actionsStorageHorizontalLayout.addWidget(self.deliteStorageItemPushButton)
         self.verticalLayout.addLayout(self.actionsStorageHorizontalLayout)
         self.menu_frame = QtWidgets.QFrame(self.centralwidget)
-        self.menu_frame.setGeometry(QtCore.QRect(320, 30, 811, 371))
+        self.menu_frame.setGeometry(QtCore.QRect(320, 30, 811, 341))
         self.menu_frame.setStyleSheet("background-color: rgba(255, 255, 255, 30%);\n"
 "border: 1px solid  rgba(255, 255, 255, 40%);\n"
 "border-radius: 10%;\n"
@@ -490,10 +447,19 @@ class Ui_MainWindow(object):
         self.menu_frame.setObjectName("menu_frame")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.menu_frame)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
+        self.headerProdHorizontalLayout_5 = QtWidgets.QHBoxLayout()
+        self.headerProdHorizontalLayout_5.setObjectName("headerProdHorizontalLayout_5")
         self.MenuHeaderLabel = QtWidgets.QLabel(self.menu_frame)
         self.MenuHeaderLabel.setEnabled(True)
         self.MenuHeaderLabel.setMinimumSize(QtCore.QSize(0, 24))
         self.MenuHeaderLabel.setMaximumSize(QtCore.QSize(16777215, 24))
+        font = QtGui.QFont()
+        font.setFamily("Extra Bold")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(99)
+        self.MenuHeaderLabel.setFont(font)
         self.MenuHeaderLabel.setStyleSheet("background-color: none;\n"
 "color: #2d2c2c;\n"
 "border:none;\n"
@@ -501,13 +467,38 @@ class Ui_MainWindow(object):
 "width: 435px;\n"
 "height: 24px;\n"
 "\n"
-"font-size: 20px;\n"
-"font-family: Inter, \"Extra Bold\";\n"
+"font: 16pt \"Extra Bold\";\n"
+"\n"
 "font-weight: 800;\n"
 "text-align: left;\n"
 "vertical-align: top")
         self.MenuHeaderLabel.setObjectName("MenuHeaderLabel")
-        self.verticalLayout_6.addWidget(self.MenuHeaderLabel)
+        self.headerProdHorizontalLayout_5.addWidget(self.MenuHeaderLabel)
+        self.exportTxtMenuPushButton = QtWidgets.QPushButton(self.menu_frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.exportTxtMenuPushButton.sizePolicy().hasHeightForWidth())
+        self.exportTxtMenuPushButton.setSizePolicy(sizePolicy)
+        self.exportTxtMenuPushButton.setMinimumSize(QtCore.QSize(24, 24))
+        self.exportTxtMenuPushButton.setMaximumSize(QtCore.QSize(24, 24))
+        self.exportTxtMenuPushButton.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.exportTxtMenuPushButton.setStyleSheet("background-color:none;\n"
+"height:24px;\n"
+"width:24px;\n"
+"padding:0px;\n"
+"position:relative;\n"
+"text-align: center;\n"
+"border: none;\n"
+"border-radius: 2%;")
+        self.exportTxtMenuPushButton.setText("")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("../img/bx_txt.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.exportTxtMenuPushButton.setIcon(icon5)
+        self.exportTxtMenuPushButton.setIconSize(QtCore.QSize(24, 24))
+        self.exportTxtMenuPushButton.setObjectName("exportTxtMenuPushButton")
+        self.headerProdHorizontalLayout_5.addWidget(self.exportTxtMenuPushButton)
+        self.verticalLayout_6.addLayout(self.headerProdHorizontalLayout_5)
         self.infoMenuLabel = QtWidgets.QLabel(self.menu_frame)
         self.infoMenuLabel.setStyleSheet("background-color: none;\n"
 "color: #2d2c2c;\n"
@@ -518,14 +509,9 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
-"outline:none;\n"
-"width:435px;")
-        self.infoMenuLabel.setScaledContents(False)
-        self.infoMenuLabel.setWordWrap(True)
-        self.infoMenuLabel.setIndent(0)
+"outline:none;")
         self.infoMenuLabel.setObjectName("infoMenuLabel")
         self.verticalLayout_6.addWidget(self.infoMenuLabel)
         self.actionsMenuHorizontalLayout = QtWidgets.QHBoxLayout()
@@ -541,7 +527,6 @@ class Ui_MainWindow(object):
 "text-align:center;\n"
 "vertical-align:center;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "font-weight: bold;\n"
 "\n"
@@ -561,15 +546,15 @@ class Ui_MainWindow(object):
 "")
         self.addMenuPushButton.setObjectName("addMenuPushButton")
         self.actionsMenuHorizontalLayout.addWidget(self.addMenuPushButton)
-        self.editMenuPushButton = QtWidgets.QPushButton(self.menu_frame)
+        self.deliteMenuTodayPushButton = QtWidgets.QPushButton(self.menu_frame)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.editMenuPushButton.sizePolicy().hasHeightForWidth())
-        self.editMenuPushButton.setSizePolicy(sizePolicy)
-        self.editMenuPushButton.setMinimumSize(QtCore.QSize(32, 32))
-        self.editMenuPushButton.setMaximumSize(QtCore.QSize(32, 32))
-        self.editMenuPushButton.setStyleSheet("QPushButton{\n"
+        sizePolicy.setHeightForWidth(self.deliteMenuTodayPushButton.sizePolicy().hasHeightForWidth())
+        self.deliteMenuTodayPushButton.setSizePolicy(sizePolicy)
+        self.deliteMenuTodayPushButton.setMinimumSize(QtCore.QSize(32, 32))
+        self.deliteMenuTodayPushButton.setMaximumSize(QtCore.QSize(32, 32))
+        self.deliteMenuTodayPushButton.setStyleSheet("QPushButton{\n"
 "height:32px;\n"
 "width:auto;\n"
 "\n"
@@ -594,39 +579,592 @@ class Ui_MainWindow(object):
 "QPushButton:pressed{\n"
 "background: #AAAAFF;\n"
 "}")
-        self.editMenuPushButton.setText("")
-        self.editMenuPushButton.setIcon(icon2)
-        self.editMenuPushButton.setIconSize(QtCore.QSize(24, 24))
-        self.editMenuPushButton.setObjectName("editMenuPushButton")
-        self.actionsMenuHorizontalLayout.addWidget(self.editMenuPushButton)
+        self.deliteMenuTodayPushButton.setText("")
+        self.deliteMenuTodayPushButton.setIcon(icon3)
+        self.deliteMenuTodayPushButton.setIconSize(QtCore.QSize(24, 24))
+        self.deliteMenuTodayPushButton.setObjectName("deliteMenuTodayPushButton")
+        self.actionsMenuHorizontalLayout.addWidget(self.deliteMenuTodayPushButton)
         self.verticalLayout_6.addLayout(self.actionsMenuHorizontalLayout)
-        self.menuListTableView = QtWidgets.QTableView(self.menu_frame)
-        self.menuListTableView.setStyleSheet("QTableView{\n"
-"background-color: rgba(255, 255, 255, 50);\n"
+        self.frame = QtWidgets.QFrame(self.menu_frame)
+        self.frame.setStyleSheet("background-color: rgba(255, 255, 255, 75);\n"
 "border: 3px solid rgba(255, 255, 255, 75);\n"
 "border-top-left-radius: 0%;\n"
+"border-top-right-radius: 0%;")
+        self.frame.setObjectName("frame")
+        self.gridLayout = QtWidgets.QGridLayout(self.frame)
+        self.gridLayout.setObjectName("gridLayout")
+        self.menuTableLabel_fats_lunch = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_fats_lunch.setMinimumSize(QtCore.QSize(60, 0))
+        self.menuTableLabel_fats_lunch.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.menuTableLabel_fats_lunch.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_fats_lunch.setScaledContents(False)
+        self.menuTableLabel_fats_lunch.setWordWrap(True)
+        self.menuTableLabel_fats_lunch.setIndent(10)
+        self.menuTableLabel_fats_lunch.setObjectName("menuTableLabel_fats_lunch")
+        self.gridLayout.addWidget(self.menuTableLabel_fats_lunch, 3, 4, 1, 1)
+        self.menuTableLabel_kalories_diner = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_kalories_diner.setMinimumSize(QtCore.QSize(160, 0))
+        self.menuTableLabel_kalories_diner.setMaximumSize(QtCore.QSize(160, 16777215))
+        self.menuTableLabel_kalories_diner.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_kalories_diner.setScaledContents(False)
+        self.menuTableLabel_kalories_diner.setWordWrap(True)
+        self.menuTableLabel_kalories_diner.setIndent(10)
+        self.menuTableLabel_kalories_diner.setObjectName("menuTableLabel_kalories_diner")
+        self.gridLayout.addWidget(self.menuTableLabel_kalories_diner, 5, 2, 1, 1)
+        self.menuTableHeaderLabel_kalories = QtWidgets.QLabel(self.frame)
+        self.menuTableHeaderLabel_kalories.setMinimumSize(QtCore.QSize(160, 36))
+        self.menuTableHeaderLabel_kalories.setMaximumSize(QtCore.QSize(160, 36))
+        self.menuTableHeaderLabel_kalories.setStyleSheet("background-color: white;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-radius: 0%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableHeaderLabel_kalories.setScaledContents(False)
+        self.menuTableHeaderLabel_kalories.setWordWrap(True)
+        self.menuTableHeaderLabel_kalories.setIndent(10)
+        self.menuTableHeaderLabel_kalories.setObjectName("menuTableHeaderLabel_kalories")
+        self.gridLayout.addWidget(self.menuTableHeaderLabel_kalories, 0, 2, 1, 1)
+        self.menuTableLabel_AllKPFC_kalories = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_AllKPFC_kalories.setMinimumSize(QtCore.QSize(160, 36))
+        self.menuTableLabel_AllKPFC_kalories.setMaximumSize(QtCore.QSize(160, 36))
+        self.menuTableLabel_AllKPFC_kalories.setStyleSheet("background-color: white;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-radius: 0%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableLabel_AllKPFC_kalories.setScaledContents(False)
+        self.menuTableLabel_AllKPFC_kalories.setWordWrap(True)
+        self.menuTableLabel_AllKPFC_kalories.setIndent(10)
+        self.menuTableLabel_AllKPFC_kalories.setObjectName("menuTableLabel_AllKPFC_kalories")
+        self.gridLayout.addWidget(self.menuTableLabel_AllKPFC_kalories, 7, 2, 1, 1)
+        self.menuTableLabel_dish_diner = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_dish_diner.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_dish_diner.setScaledContents(False)
+        self.menuTableLabel_dish_diner.setWordWrap(True)
+        self.menuTableLabel_dish_diner.setIndent(10)
+        self.menuTableLabel_dish_diner.setObjectName("menuTableLabel_dish_diner")
+        self.gridLayout.addWidget(self.menuTableLabel_dish_diner, 5, 1, 1, 1)
+        self.menuTableLabel_dish_lunch = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_dish_lunch.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_dish_lunch.setScaledContents(False)
+        self.menuTableLabel_dish_lunch.setWordWrap(True)
+        self.menuTableLabel_dish_lunch.setIndent(10)
+        self.menuTableLabel_dish_lunch.setObjectName("menuTableLabel_dish_lunch")
+        self.gridLayout.addWidget(self.menuTableLabel_dish_lunch, 3, 1, 1, 1)
+        self.menuTableHeaderLabel_breakfast = QtWidgets.QLabel(self.frame)
+        self.menuTableHeaderLabel_breakfast.setStyleSheet("background-color:rgb(220, 220, 220);\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-top-left-radius: 10%;\n"
 "border-top-right-radius: 0%;\n"
-"}\n"
+"border-bottom-left-radius: 0%;\n"
+"border-bottom-right-radius: 0%;\n"
 "\n"
-"QTableView::section {\n"
-"background-color: rgba(55, 55, 55);\n"
-"color: white;\n"
-"border: none;\n"
-"}\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableHeaderLabel_breakfast.setScaledContents(False)
+        self.menuTableHeaderLabel_breakfast.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.menuTableHeaderLabel_breakfast.setWordWrap(True)
+        self.menuTableHeaderLabel_breakfast.setIndent(10)
+        self.menuTableHeaderLabel_breakfast.setObjectName("menuTableHeaderLabel_breakfast")
+        self.gridLayout.addWidget(self.menuTableHeaderLabel_breakfast, 2, 0, 1, 1)
+        self.menuTableLabel_fats_diner = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_fats_diner.setMinimumSize(QtCore.QSize(60, 0))
+        self.menuTableLabel_fats_diner.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.menuTableLabel_fats_diner.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
 "\n"
-"QTableView::item {\n"
-"border-style: none;\n"
-"border-bottom: rgba(255, 255, 255, 50);\n"
-"}\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_fats_diner.setScaledContents(False)
+        self.menuTableLabel_fats_diner.setWordWrap(True)
+        self.menuTableLabel_fats_diner.setIndent(10)
+        self.menuTableLabel_fats_diner.setObjectName("menuTableLabel_fats_diner")
+        self.gridLayout.addWidget(self.menuTableLabel_fats_diner, 5, 4, 1, 1)
+        self.menuTableLabel_proteins_diner = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_proteins_diner.setMinimumSize(QtCore.QSize(60, 0))
+        self.menuTableLabel_proteins_diner.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.menuTableLabel_proteins_diner.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
 "\n"
-"QTableView::item:selected {\n"
-"border-style: none;\n"
-"border-bottom: rgba(255, 255, 255, 50);\n"
-"}")
-        self.menuListTableView.setObjectName("menuListTableView")
-        self.verticalLayout_6.addWidget(self.menuListTableView)
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_proteins_diner.setScaledContents(False)
+        self.menuTableLabel_proteins_diner.setWordWrap(True)
+        self.menuTableLabel_proteins_diner.setIndent(10)
+        self.menuTableLabel_proteins_diner.setObjectName("menuTableLabel_proteins_diner")
+        self.gridLayout.addWidget(self.menuTableLabel_proteins_diner, 5, 3, 1, 1)
+        self.menuTableHeaderLabel_lunch = QtWidgets.QLabel(self.frame)
+        self.menuTableHeaderLabel_lunch.setStyleSheet("background-color:rgb(220, 220, 220);\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-radius: 0%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableHeaderLabel_lunch.setScaledContents(False)
+        self.menuTableHeaderLabel_lunch.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.menuTableHeaderLabel_lunch.setWordWrap(True)
+        self.menuTableHeaderLabel_lunch.setIndent(10)
+        self.menuTableHeaderLabel_lunch.setObjectName("menuTableHeaderLabel_lunch")
+        self.gridLayout.addWidget(self.menuTableHeaderLabel_lunch, 3, 0, 1, 1)
+        self.menuTableHeaderLabel_diner = QtWidgets.QLabel(self.frame)
+        self.menuTableHeaderLabel_diner.setStyleSheet("background-color:rgb(220, 220, 220);\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-top-left-radius: 0%;\n"
+"border-top-right-radius: 0%;\n"
+"border-bottom-right-radius: 0%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableHeaderLabel_diner.setScaledContents(False)
+        self.menuTableHeaderLabel_diner.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.menuTableHeaderLabel_diner.setWordWrap(True)
+        self.menuTableHeaderLabel_diner.setIndent(10)
+        self.menuTableHeaderLabel_diner.setObjectName("menuTableHeaderLabel_diner")
+        self.gridLayout.addWidget(self.menuTableHeaderLabel_diner, 5, 0, 1, 1)
+        self.menuTableHeaderLabel_AllKPFC = QtWidgets.QLabel(self.frame)
+        self.menuTableHeaderLabel_AllKPFC.setMinimumSize(QtCore.QSize(0, 36))
+        self.menuTableHeaderLabel_AllKPFC.setMaximumSize(QtCore.QSize(16777215, 36))
+        self.menuTableHeaderLabel_AllKPFC.setStyleSheet("background-color: white;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-top-left-radius: 0%;\n"
+"border-top-right-radius: 0%;\n"
+"border-bottom-right-radius: 0%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableHeaderLabel_AllKPFC.setScaledContents(False)
+        self.menuTableHeaderLabel_AllKPFC.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.menuTableHeaderLabel_AllKPFC.setWordWrap(True)
+        self.menuTableHeaderLabel_AllKPFC.setIndent(10)
+        self.menuTableHeaderLabel_AllKPFC.setObjectName("menuTableHeaderLabel_AllKPFC")
+        self.gridLayout.addWidget(self.menuTableHeaderLabel_AllKPFC, 7, 1, 1, 1)
+        self.menuTableLabel_kalories_breakfast = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_kalories_breakfast.setMinimumSize(QtCore.QSize(160, 0))
+        self.menuTableLabel_kalories_breakfast.setMaximumSize(QtCore.QSize(160, 16777215))
+        self.menuTableLabel_kalories_breakfast.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_kalories_breakfast.setScaledContents(False)
+        self.menuTableLabel_kalories_breakfast.setWordWrap(True)
+        self.menuTableLabel_kalories_breakfast.setIndent(10)
+        self.menuTableLabel_kalories_breakfast.setObjectName("menuTableLabel_kalories_breakfast")
+        self.gridLayout.addWidget(self.menuTableLabel_kalories_breakfast, 2, 2, 1, 1)
+        self.menuTableLabel_proteins_breakfast = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_proteins_breakfast.setMinimumSize(QtCore.QSize(60, 0))
+        self.menuTableLabel_proteins_breakfast.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.menuTableLabel_proteins_breakfast.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_proteins_breakfast.setScaledContents(False)
+        self.menuTableLabel_proteins_breakfast.setWordWrap(True)
+        self.menuTableLabel_proteins_breakfast.setIndent(10)
+        self.menuTableLabel_proteins_breakfast.setObjectName("menuTableLabel_proteins_breakfast")
+        self.gridLayout.addWidget(self.menuTableLabel_proteins_breakfast, 2, 3, 1, 1)
+        self.menuTableLabel_carboh_breakfast = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_carboh_breakfast.setMinimumSize(QtCore.QSize(60, 0))
+        self.menuTableLabel_carboh_breakfast.setMaximumSize(QtCore.QSize(60, 40))
+        self.menuTableLabel_carboh_breakfast.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_carboh_breakfast.setScaledContents(False)
+        self.menuTableLabel_carboh_breakfast.setWordWrap(True)
+        self.menuTableLabel_carboh_breakfast.setIndent(10)
+        self.menuTableLabel_carboh_breakfast.setObjectName("menuTableLabel_carboh_breakfast")
+        self.gridLayout.addWidget(self.menuTableLabel_carboh_breakfast, 2, 5, 1, 1)
+        self.menuTableLabel_fats_breakfast = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_fats_breakfast.setMinimumSize(QtCore.QSize(60, 0))
+        self.menuTableLabel_fats_breakfast.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.menuTableLabel_fats_breakfast.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_fats_breakfast.setScaledContents(False)
+        self.menuTableLabel_fats_breakfast.setWordWrap(True)
+        self.menuTableLabel_fats_breakfast.setIndent(10)
+        self.menuTableLabel_fats_breakfast.setObjectName("menuTableLabel_fats_breakfast")
+        self.gridLayout.addWidget(self.menuTableLabel_fats_breakfast, 2, 4, 1, 1)
+        self.menuTableLabel_proteins_lunch = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_proteins_lunch.setMinimumSize(QtCore.QSize(60, 0))
+        self.menuTableLabel_proteins_lunch.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.menuTableLabel_proteins_lunch.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_proteins_lunch.setScaledContents(False)
+        self.menuTableLabel_proteins_lunch.setWordWrap(True)
+        self.menuTableLabel_proteins_lunch.setIndent(10)
+        self.menuTableLabel_proteins_lunch.setObjectName("menuTableLabel_proteins_lunch")
+        self.gridLayout.addWidget(self.menuTableLabel_proteins_lunch, 3, 3, 1, 1)
+        self.menuTableLabel_AllKPFC_carbons = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_AllKPFC_carbons.setMinimumSize(QtCore.QSize(60, 36))
+        self.menuTableLabel_AllKPFC_carbons.setMaximumSize(QtCore.QSize(60, 36))
+        self.menuTableLabel_AllKPFC_carbons.setStyleSheet("background-color: white;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-top-left-radius: 0%;\n"
+"border-top-right-radius: 0%;\n"
+"border-bottom-left-radius: 0%;\n"
+"border-bottom-right-radius: 10%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableLabel_AllKPFC_carbons.setScaledContents(False)
+        self.menuTableLabel_AllKPFC_carbons.setWordWrap(True)
+        self.menuTableLabel_AllKPFC_carbons.setIndent(10)
+        self.menuTableLabel_AllKPFC_carbons.setObjectName("menuTableLabel_AllKPFC_carbons")
+        self.gridLayout.addWidget(self.menuTableLabel_AllKPFC_carbons, 7, 5, 1, 1)
+        self.menuTableLabel_carboh_diner = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_carboh_diner.setMinimumSize(QtCore.QSize(60, 0))
+        self.menuTableLabel_carboh_diner.setMaximumSize(QtCore.QSize(60, 40))
+        self.menuTableLabel_carboh_diner.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_carboh_diner.setScaledContents(False)
+        self.menuTableLabel_carboh_diner.setWordWrap(True)
+        self.menuTableLabel_carboh_diner.setIndent(10)
+        self.menuTableLabel_carboh_diner.setObjectName("menuTableLabel_carboh_diner")
+        self.gridLayout.addWidget(self.menuTableLabel_carboh_diner, 5, 5, 1, 1)
+        self.menuTableLabel_dish_breakfast = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_dish_breakfast.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_dish_breakfast.setScaledContents(False)
+        self.menuTableLabel_dish_breakfast.setWordWrap(True)
+        self.menuTableLabel_dish_breakfast.setIndent(10)
+        self.menuTableLabel_dish_breakfast.setObjectName("menuTableLabel_dish_breakfast")
+        self.gridLayout.addWidget(self.menuTableLabel_dish_breakfast, 2, 1, 1, 1)
+        self.menuTableHeaderLabel_dish = QtWidgets.QLabel(self.frame)
+        self.menuTableHeaderLabel_dish.setMinimumSize(QtCore.QSize(240, 36))
+        self.menuTableHeaderLabel_dish.setMaximumSize(QtCore.QSize(240, 36))
+        self.menuTableHeaderLabel_dish.setStyleSheet("background-color: white;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-top-left-radius: 10%;\n"
+"border-top-right-radius: 0%;\n"
+"border-bottom-left-radius: 0%;\n"
+"border-bottom-right-radius: 0%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableHeaderLabel_dish.setScaledContents(False)
+        self.menuTableHeaderLabel_dish.setWordWrap(True)
+        self.menuTableHeaderLabel_dish.setIndent(10)
+        self.menuTableHeaderLabel_dish.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
+        self.menuTableHeaderLabel_dish.setObjectName("menuTableHeaderLabel_dish")
+        self.gridLayout.addWidget(self.menuTableHeaderLabel_dish, 0, 1, 1, 1)
+        self.menuTableHeaderLabel_proteins = QtWidgets.QLabel(self.frame)
+        self.menuTableHeaderLabel_proteins.setMinimumSize(QtCore.QSize(60, 36))
+        self.menuTableHeaderLabel_proteins.setMaximumSize(QtCore.QSize(60, 36))
+        self.menuTableHeaderLabel_proteins.setStyleSheet("background-color: white;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-radius: 0%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableHeaderLabel_proteins.setScaledContents(False)
+        self.menuTableHeaderLabel_proteins.setWordWrap(True)
+        self.menuTableHeaderLabel_proteins.setIndent(10)
+        self.menuTableHeaderLabel_proteins.setObjectName("menuTableHeaderLabel_proteins")
+        self.gridLayout.addWidget(self.menuTableHeaderLabel_proteins, 0, 3, 1, 1)
+        self.menuTableLabel_carboh_lunch = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_carboh_lunch.setMinimumSize(QtCore.QSize(60, 0))
+        self.menuTableLabel_carboh_lunch.setMaximumSize(QtCore.QSize(60, 40))
+        self.menuTableLabel_carboh_lunch.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_carboh_lunch.setScaledContents(False)
+        self.menuTableLabel_carboh_lunch.setWordWrap(True)
+        self.menuTableLabel_carboh_lunch.setIndent(10)
+        self.menuTableLabel_carboh_lunch.setObjectName("menuTableLabel_carboh_lunch")
+        self.gridLayout.addWidget(self.menuTableLabel_carboh_lunch, 3, 5, 1, 1)
+        self.menuTableLabel_AllKPFC_proteins = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_AllKPFC_proteins.setMinimumSize(QtCore.QSize(60, 36))
+        self.menuTableLabel_AllKPFC_proteins.setMaximumSize(QtCore.QSize(60, 36))
+        self.menuTableLabel_AllKPFC_proteins.setStyleSheet("background-color: white;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-radius: 0%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableLabel_AllKPFC_proteins.setScaledContents(False)
+        self.menuTableLabel_AllKPFC_proteins.setWordWrap(True)
+        self.menuTableLabel_AllKPFC_proteins.setIndent(10)
+        self.menuTableLabel_AllKPFC_proteins.setObjectName("menuTableLabel_AllKPFC_proteins")
+        self.gridLayout.addWidget(self.menuTableLabel_AllKPFC_proteins, 7, 3, 1, 1)
+        self.menuTableHeaderLabel_fats = QtWidgets.QLabel(self.frame)
+        self.menuTableHeaderLabel_fats.setMinimumSize(QtCore.QSize(60, 36))
+        self.menuTableHeaderLabel_fats.setMaximumSize(QtCore.QSize(60, 36))
+        self.menuTableHeaderLabel_fats.setStyleSheet("background-color: white;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-radius: 0%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableHeaderLabel_fats.setScaledContents(False)
+        self.menuTableHeaderLabel_fats.setWordWrap(True)
+        self.menuTableHeaderLabel_fats.setIndent(10)
+        self.menuTableHeaderLabel_fats.setObjectName("menuTableHeaderLabel_fats")
+        self.gridLayout.addWidget(self.menuTableHeaderLabel_fats, 0, 4, 1, 1)
+        self.menuTableHeaderLabel_carboh = QtWidgets.QLabel(self.frame)
+        self.menuTableHeaderLabel_carboh.setMinimumSize(QtCore.QSize(60, 36))
+        self.menuTableHeaderLabel_carboh.setMaximumSize(QtCore.QSize(60, 36))
+        self.menuTableHeaderLabel_carboh.setStyleSheet("background-color: white;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-top-left-radius: 0%;\n"
+"border-top-right-radius: 10%;\n"
+"border-bottom-left-radius: 0%;\n"
+"border-bottom-right-radius: 0%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableHeaderLabel_carboh.setScaledContents(False)
+        self.menuTableHeaderLabel_carboh.setWordWrap(True)
+        self.menuTableHeaderLabel_carboh.setIndent(10)
+        self.menuTableHeaderLabel_carboh.setObjectName("menuTableHeaderLabel_carboh")
+        self.gridLayout.addWidget(self.menuTableHeaderLabel_carboh, 0, 5, 1, 1)
+        self.menuTableLabel_AllKPFC_fats = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_AllKPFC_fats.setMinimumSize(QtCore.QSize(60, 36))
+        self.menuTableLabel_AllKPFC_fats.setMaximumSize(QtCore.QSize(60, 36))
+        self.menuTableLabel_AllKPFC_fats.setStyleSheet("background-color: white;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"border-radius: 0%;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;\n"
+"font-weight:700;")
+        self.menuTableLabel_AllKPFC_fats.setScaledContents(False)
+        self.menuTableLabel_AllKPFC_fats.setWordWrap(True)
+        self.menuTableLabel_AllKPFC_fats.setIndent(10)
+        self.menuTableLabel_AllKPFC_fats.setObjectName("menuTableLabel_AllKPFC_fats")
+        self.gridLayout.addWidget(self.menuTableLabel_AllKPFC_fats, 7, 4, 1, 1)
+        self.menuTableLabel_kalories_lunch = QtWidgets.QLabel(self.frame)
+        self.menuTableLabel_kalories_lunch.setMinimumSize(QtCore.QSize(160, 0))
+        self.menuTableLabel_kalories_lunch.setMaximumSize(QtCore.QSize(160, 16777215))
+        self.menuTableLabel_kalories_lunch.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.menuTableLabel_kalories_lunch.setScaledContents(False)
+        self.menuTableLabel_kalories_lunch.setWordWrap(True)
+        self.menuTableLabel_kalories_lunch.setIndent(10)
+        self.menuTableLabel_kalories_lunch.setObjectName("menuTableLabel_kalories_lunch")
+        self.gridLayout.addWidget(self.menuTableLabel_kalories_lunch, 3, 2, 1, 1)
+        self.verticalLayout_6.addWidget(self.frame)
         self.dishes_frame = QtWidgets.QFrame(self.centralwidget)
-        self.dishes_frame.setGeometry(QtCore.QRect(1150, 280, 261, 262))
+        self.dishes_frame.setGeometry(QtCore.QRect(1150, 330, 261, 301))
         self.dishes_frame.setStyleSheet("background-color: rgba(255, 255, 255, 30%);\n"
 "border: 1px solid  rgba(255, 255, 255, 40%);\n"
 "border-radius: 10%;\n"
@@ -648,8 +1186,8 @@ class Ui_MainWindow(object):
 "width: 435px;\n"
 "height: 24px;\n"
 "\n"
-"font-size: 20px;\n"
-"font-family: Inter, \"Extra Bold\";\n"
+"font: 16pt \"Extra Bold\";\n"
+"\n"
 "font-weight: 800;\n"
 "text-align: left;\n"
 "vertical-align: top")
@@ -676,20 +1214,42 @@ class Ui_MainWindow(object):
         self.headerProdHorizontalLayout_2.addWidget(self.sortDishesPushButton)
         self.Dishes_Layout_2.addLayout(self.headerProdHorizontalLayout_2)
         self.dishListTableView = QtWidgets.QTableView(self.dishes_frame)
-        self.dishListTableView.setStyleSheet("margin-top: 8px;")
+        self.dishListTableView.setStyleSheet("QTableView{\n"
+"background-color: rgba(255, 255, 255, 50);\n"
+"border: 3px solid rgba(255, 255, 255, 75);\n"
+"margin-top: 8px;\n"
+"}\n"
+"\n"
+"QTableView::section {\n"
+"background-color: rgba(55, 55, 55);\n"
+"color: white;\n"
+"border: none;\n"
+"}\n"
+"\n"
+"QTableView::item {\n"
+"border-style: none;\n"
+"border-bottom: rgba(255, 255, 255, 50);\n"
+"}\n"
+"\n"
+"QTableView::item:selected {\n"
+"border-style: none;\n"
+"border-bottom: rgba(255, 255, 255, 50);\n"
+"background-color: rgba(255, 255, 255, 85);\n"
+"}")
+        self.dishListTableView.setShowGrid(False)
         self.dishListTableView.setObjectName("dishListTableView")
         self.Dishes_Layout_2.addWidget(self.dishListTableView)
         self.actionsDishHorizontalLayout = QtWidgets.QHBoxLayout()
         self.actionsDishHorizontalLayout.setObjectName("actionsDishHorizontalLayout")
-        self.editDishPushButton = QtWidgets.QPushButton(self.dishes_frame)
+        self.inspectDishPushButton = QtWidgets.QPushButton(self.dishes_frame)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.editDishPushButton.sizePolicy().hasHeightForWidth())
-        self.editDishPushButton.setSizePolicy(sizePolicy)
-        self.editDishPushButton.setMinimumSize(QtCore.QSize(32, 32))
-        self.editDishPushButton.setMaximumSize(QtCore.QSize(32, 32))
-        self.editDishPushButton.setStyleSheet("QPushButton{\n"
+        sizePolicy.setHeightForWidth(self.inspectDishPushButton.sizePolicy().hasHeightForWidth())
+        self.inspectDishPushButton.setSizePolicy(sizePolicy)
+        self.inspectDishPushButton.setMinimumSize(QtCore.QSize(32, 32))
+        self.inspectDishPushButton.setMaximumSize(QtCore.QSize(32, 32))
+        self.inspectDishPushButton.setStyleSheet("QPushButton{\n"
 "height:32px;\n"
 "width:auto;\n"
 "\n"
@@ -714,11 +1274,11 @@ class Ui_MainWindow(object):
 "QPushButton:pressed{\n"
 "background: #AAAAFF;\n"
 "}")
-        self.editDishPushButton.setText("")
-        self.editDishPushButton.setIcon(icon2)
-        self.editDishPushButton.setIconSize(QtCore.QSize(24, 24))
-        self.editDishPushButton.setObjectName("editDishPushButton")
-        self.actionsDishHorizontalLayout.addWidget(self.editDishPushButton)
+        self.inspectDishPushButton.setText("")
+        self.inspectDishPushButton.setIcon(icon2)
+        self.inspectDishPushButton.setIconSize(QtCore.QSize(24, 24))
+        self.inspectDishPushButton.setObjectName("inspectDishPushButton")
+        self.actionsDishHorizontalLayout.addWidget(self.inspectDishPushButton)
         self.addDishPushButton = QtWidgets.QPushButton(self.dishes_frame)
         self.addDishPushButton.setStyleSheet("QPushButton{\n"
 "height:32px;\n"
@@ -730,7 +1290,6 @@ class Ui_MainWindow(object):
 "text-align:center;\n"
 "vertical-align:center;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "font-weight: bold;\n"
 "\n"
@@ -788,7 +1347,7 @@ class Ui_MainWindow(object):
         self.actionsDishHorizontalLayout.addWidget(self.deliteDishPushButton)
         self.Dishes_Layout_2.addLayout(self.actionsDishHorizontalLayout)
         self.history_frame = QtWidgets.QFrame(self.centralwidget)
-        self.history_frame.setGeometry(QtCore.QRect(320, 420, 811, 211))
+        self.history_frame.setGeometry(QtCore.QRect(320, 390, 811, 221))
         self.history_frame.setStyleSheet("background-color: rgba(255, 255, 255, 30%);\n"
 "border: 1px solid  rgba(255, 255, 255, 40%);\n"
 "border-radius: 10%;\n"
@@ -797,6 +1356,8 @@ class Ui_MainWindow(object):
         self.history_frame.setObjectName("history_frame")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.history_frame)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.headerProdHorizontalLayout_4 = QtWidgets.QHBoxLayout()
+        self.headerProdHorizontalLayout_4.setObjectName("headerProdHorizontalLayout_4")
         self.hostoryHeaderLabel = QtWidgets.QLabel(self.history_frame)
         self.hostoryHeaderLabel.setEnabled(True)
         self.hostoryHeaderLabel.setMinimumSize(QtCore.QSize(0, 24))
@@ -808,16 +1369,65 @@ class Ui_MainWindow(object):
 "width: 435px;\n"
 "height: 24px;\n"
 "\n"
-"font-size: 20px;\n"
-"font-family: Inter, \"Extra Bold\";\n"
+"font: 16pt \"Extra Bold\";\n"
+"\n"
 "font-weight: 800;\n"
 "text-align: left;\n"
 "vertical-align: top")
         self.hostoryHeaderLabel.setObjectName("hostoryHeaderLabel")
-        self.verticalLayout_2.addWidget(self.hostoryHeaderLabel)
+        self.headerProdHorizontalLayout_4.addWidget(self.hostoryHeaderLabel)
+        self.exportExeDishesPushButton = QtWidgets.QPushButton(self.history_frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.exportExeDishesPushButton.sizePolicy().hasHeightForWidth())
+        self.exportExeDishesPushButton.setSizePolicy(sizePolicy)
+        self.exportExeDishesPushButton.setMinimumSize(QtCore.QSize(24, 24))
+        self.exportExeDishesPushButton.setMaximumSize(QtCore.QSize(24, 24))
+        self.exportExeDishesPushButton.setStyleSheet("background-color:none;\n"
+"height:24px;\n"
+"width:24px;\n"
+"padding:0px;\n"
+"position:relative;\n"
+"text-align: center;\n"
+"border: none;\n"
+"border-radius: 2%;")
+        self.exportExeDishesPushButton.setText("")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("../img/bx_xls.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.exportExeDishesPushButton.setIcon(icon6)
+        self.exportExeDishesPushButton.setIconSize(QtCore.QSize(24, 24))
+        self.exportExeDishesPushButton.setObjectName("exportExeDishesPushButton")
+        self.headerProdHorizontalLayout_4.addWidget(self.exportExeDishesPushButton)
+        self.exportCsvDishesPushButton = QtWidgets.QPushButton(self.history_frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.exportCsvDishesPushButton.sizePolicy().hasHeightForWidth())
+        self.exportCsvDishesPushButton.setSizePolicy(sizePolicy)
+        self.exportCsvDishesPushButton.setMinimumSize(QtCore.QSize(24, 24))
+        self.exportCsvDishesPushButton.setMaximumSize(QtCore.QSize(24, 24))
+        self.exportCsvDishesPushButton.setStyleSheet("background-color:none;\n"
+"height:24px;\n"
+"width:24px;\n"
+"padding:0px;\n"
+"position:relative;\n"
+"text-align: center;\n"
+"border: none;\n"
+"border-radius: 2%;")
+        self.exportCsvDishesPushButton.setText("")
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap("../img/bx_csv.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.exportCsvDishesPushButton.setIcon(icon7)
+        self.exportCsvDishesPushButton.setIconSize(QtCore.QSize(24, 24))
+        self.exportCsvDishesPushButton.setObjectName("exportCsvDishesPushButton")
+        self.headerProdHorizontalLayout_4.addWidget(self.exportCsvDishesPushButton)
+        self.verticalLayout_2.addLayout(self.headerProdHorizontalLayout_4)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.history_card_frame_1 = QtWidgets.QFrame(self.history_frame)
+        self.history_card_frame_1.setMinimumSize(QtCore.QSize(0, 160))
+        self.history_card_frame_1.setMaximumSize(QtCore.QSize(16777215, 260))
         self.history_card_frame_1.setStyleSheet("background-color: rgba(255, 255, 255, 30%);\n"
 "border: 1px solid  rgba(255, 255, 255, 40%);\n"
 "border-radius: 10%;\n"
@@ -826,32 +1436,41 @@ class Ui_MainWindow(object):
         self.history_card_frame_1.setObjectName("history_card_frame_1")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.history_card_frame_1)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.dateLabel = QtWidgets.QLabel(self.history_card_frame_1)
-        self.dateLabel.setStyleSheet("color:#b4b4b4;\n"
+        self.dateLabel_1 = QtWidgets.QLabel(self.history_card_frame_1)
+        self.dateLabel_1.setMinimumSize(QtCore.QSize(0, 24))
+        self.dateLabel_1.setMaximumSize(QtCore.QSize(16777215, 24))
+        self.dateLabel_1.setStyleSheet("color:#b4b4b4;\n"
 "background-color: none;\n"
 "border: none;\n"
 "\n"
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
-"outline:none;")
-        self.dateLabel.setScaledContents(False)
-        self.dateLabel.setWordWrap(True)
-        self.dateLabel.setObjectName("dateLabel")
-        self.verticalLayout_8.addWidget(self.dateLabel)
+"outline:none;\n"
+"\n"
+"")
+        self.dateLabel_1.setScaledContents(False)
+        self.dateLabel_1.setWordWrap(True)
+        self.dateLabel_1.setObjectName("dateLabel_1")
+        self.verticalLayout_8.addWidget(self.dateLabel_1)
         self.listFoodVerticalLayout = QtWidgets.QVBoxLayout()
         self.listFoodVerticalLayout.setObjectName("listFoodVerticalLayout")
-        self.breakfastLabel = QtWidgets.QLabel(self.history_card_frame_1)
-        self.breakfastLabel.setStyleSheet("background-color: none;\n"
+        self.breakfastLabel_1 = QtWidgets.QLabel(self.history_card_frame_1)
+        font = QtGui.QFont()
+        font.setFamily("STXihei")
+        font.setPointSize(-1)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.breakfastLabel_1.setFont(font)
+        self.breakfastLabel_1.setStyleSheet("background-color: none;\n"
 "border: none;\n"
 "\n"
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -860,23 +1479,23 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
-        self.breakfastLabel.setScaledContents(False)
-        self.breakfastLabel.setWordWrap(True)
-        self.breakfastLabel.setObjectName("breakfastLabel")
-        self.listFoodVerticalLayout.addWidget(self.breakfastLabel)
-        self.lunchLabel = QtWidgets.QLabel(self.history_card_frame_1)
-        self.lunchLabel.setStyleSheet("background-color: none;\n"
+"width:435px;\n"
+"\n"
+"")
+        self.breakfastLabel_1.setScaledContents(False)
+        self.breakfastLabel_1.setWordWrap(True)
+        self.breakfastLabel_1.setObjectName("breakfastLabel_1")
+        self.listFoodVerticalLayout.addWidget(self.breakfastLabel_1)
+        self.lunchLabel_1 = QtWidgets.QLabel(self.history_card_frame_1)
+        self.lunchLabel_1.setStyleSheet("background-color: none;\n"
 "border: none;\n"
 "\n"
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -885,23 +1504,22 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
-        self.lunchLabel.setScaledContents(False)
-        self.lunchLabel.setWordWrap(True)
-        self.lunchLabel.setObjectName("lunchLabel")
-        self.listFoodVerticalLayout.addWidget(self.lunchLabel)
-        self.dinerLabel = QtWidgets.QLabel(self.history_card_frame_1)
-        self.dinerLabel.setStyleSheet("background-color: none;\n"
+"width:435px;\n"
+"")
+        self.lunchLabel_1.setScaledContents(False)
+        self.lunchLabel_1.setWordWrap(True)
+        self.lunchLabel_1.setObjectName("lunchLabel_1")
+        self.listFoodVerticalLayout.addWidget(self.lunchLabel_1)
+        self.dinerLabel_1 = QtWidgets.QLabel(self.history_card_frame_1)
+        self.dinerLabel_1.setStyleSheet("background-color: none;\n"
 "border: none;\n"
 "\n"
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -910,18 +1528,18 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
-        self.dinerLabel.setScaledContents(False)
-        self.dinerLabel.setWordWrap(True)
-        self.dinerLabel.setObjectName("dinerLabel")
-        self.listFoodVerticalLayout.addWidget(self.dinerLabel)
+"width:435px;\n"
+"")
+        self.dinerLabel_1.setScaledContents(False)
+        self.dinerLabel_1.setWordWrap(True)
+        self.dinerLabel_1.setObjectName("dinerLabel_1")
+        self.listFoodVerticalLayout.addWidget(self.dinerLabel_1)
         self.verticalLayout_8.addLayout(self.listFoodVerticalLayout)
         self.cardBorderLine = QtWidgets.QFrame(self.history_card_frame_1)
-        self.cardBorderLine.setStyleSheet("background-color: rgba(173, 220, 130, 75)")
+        self.cardBorderLine.setStyleSheet("background-color: rgb(220, 220, 220)")
         self.cardBorderLine.setFrameShadow(QtWidgets.QFrame.Plain)
         self.cardBorderLine.setLineWidth(1)
         self.cardBorderLine.setFrameShape(QtWidgets.QFrame.HLine)
@@ -929,14 +1547,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.addWidget(self.cardBorderLine)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.kaloriesLabel = QtWidgets.QLabel(self.history_card_frame_1)
-        self.kaloriesLabel.setStyleSheet("background-color: none;\n"
+        self.kaloriesLabel_1 = QtWidgets.QLabel(self.history_card_frame_1)
+        self.kaloriesLabel_1.setMinimumSize(QtCore.QSize(84, 0))
+        self.kaloriesLabel_1.setMaximumSize(QtCore.QSize(84, 16777215))
+        self.kaloriesLabel_1.setStyleSheet("background-color: none;\n"
 "border: none;\n"
 "\n"
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -945,23 +1564,22 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
-        self.kaloriesLabel.setScaledContents(False)
-        self.kaloriesLabel.setWordWrap(True)
-        self.kaloriesLabel.setObjectName("kaloriesLabel")
-        self.horizontalLayout_2.addWidget(self.kaloriesLabel)
-        self.foodvalueLabel = QtWidgets.QLabel(self.history_card_frame_1)
-        self.foodvalueLabel.setStyleSheet("background-color: none;\n"
+"width:435px;\n"
+"")
+        self.kaloriesLabel_1.setScaledContents(False)
+        self.kaloriesLabel_1.setWordWrap(True)
+        self.kaloriesLabel_1.setObjectName("kaloriesLabel_1")
+        self.horizontalLayout_2.addWidget(self.kaloriesLabel_1)
+        self.foodvalueLabel_1 = QtWidgets.QLabel(self.history_card_frame_1)
+        self.foodvalueLabel_1.setStyleSheet("background-color: none;\n"
 "border: none;\n"
 "\n"
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -970,19 +1588,21 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
-        self.foodvalueLabel.setScaledContents(False)
-        self.foodvalueLabel.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.foodvalueLabel.setWordWrap(True)
-        self.foodvalueLabel.setObjectName("foodvalueLabel")
-        self.horizontalLayout_2.addWidget(self.foodvalueLabel)
+"width:435px;\n"
+"")
+        self.foodvalueLabel_1.setScaledContents(False)
+        self.foodvalueLabel_1.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.foodvalueLabel_1.setWordWrap(True)
+        self.foodvalueLabel_1.setObjectName("foodvalueLabel_1")
+        self.horizontalLayout_2.addWidget(self.foodvalueLabel_1)
         self.verticalLayout_8.addLayout(self.horizontalLayout_2)
         self.horizontalLayout.addWidget(self.history_card_frame_1)
         self.history_card_frame_2 = QtWidgets.QFrame(self.history_frame)
+        self.history_card_frame_2.setMinimumSize(QtCore.QSize(0, 160))
+        self.history_card_frame_2.setMaximumSize(QtCore.QSize(16777215, 260))
         self.history_card_frame_2.setStyleSheet("background-color: rgba(255, 255, 255, 30%);\n"
 "border: 1px solid  rgba(255, 255, 255, 40%);\n"
 "border-radius: 10%;\n"
@@ -992,6 +1612,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.history_card_frame_2)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
         self.dateLabel_2 = QtWidgets.QLabel(self.history_card_frame_2)
+        self.dateLabel_2.setMinimumSize(QtCore.QSize(0, 24))
+        self.dateLabel_2.setMaximumSize(QtCore.QSize(16777215, 24))
         self.dateLabel_2.setStyleSheet("color:#b4b4b4;\n"
 "background-color: none;\n"
 "border: none;\n"
@@ -999,7 +1621,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;")
@@ -1016,7 +1637,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -1025,11 +1645,11 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
+"width:435px;\n"
+"")
         self.breakfastLabel_2.setScaledContents(False)
         self.breakfastLabel_2.setWordWrap(True)
         self.breakfastLabel_2.setObjectName("breakfastLabel_2")
@@ -1041,7 +1661,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -1050,11 +1669,11 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
+"width:435px;\n"
+"")
         self.lunchLabel_2.setScaledContents(False)
         self.lunchLabel_2.setWordWrap(True)
         self.lunchLabel_2.setObjectName("lunchLabel_2")
@@ -1066,7 +1685,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -1075,18 +1693,18 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
+"width:435px;\n"
+"")
         self.dinerLabel_2.setScaledContents(False)
         self.dinerLabel_2.setWordWrap(True)
         self.dinerLabel_2.setObjectName("dinerLabel_2")
         self.listFoodVerticalLayout_2.addWidget(self.dinerLabel_2)
         self.verticalLayout_9.addLayout(self.listFoodVerticalLayout_2)
         self.cardBorderLine_2 = QtWidgets.QFrame(self.history_card_frame_2)
-        self.cardBorderLine_2.setStyleSheet("background-color: rgba(173, 220, 130, 75)")
+        self.cardBorderLine_2.setStyleSheet("background-color: rgb(220, 220, 220)")
         self.cardBorderLine_2.setFrameShadow(QtWidgets.QFrame.Plain)
         self.cardBorderLine_2.setLineWidth(1)
         self.cardBorderLine_2.setFrameShape(QtWidgets.QFrame.HLine)
@@ -1095,13 +1713,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
         self.kaloriesLabel_2 = QtWidgets.QLabel(self.history_card_frame_2)
+        self.kaloriesLabel_2.setMinimumSize(QtCore.QSize(84, 0))
+        self.kaloriesLabel_2.setMaximumSize(QtCore.QSize(84, 16777215))
         self.kaloriesLabel_2.setStyleSheet("background-color: none;\n"
 "border: none;\n"
 "\n"
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -1110,11 +1729,11 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
+"width:435px;\n"
+"")
         self.kaloriesLabel_2.setScaledContents(False)
         self.kaloriesLabel_2.setWordWrap(True)
         self.kaloriesLabel_2.setObjectName("kaloriesLabel_2")
@@ -1126,7 +1745,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -1135,11 +1753,11 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
+"width:435px;\n"
+"")
         self.foodvalueLabel_2.setScaledContents(False)
         self.foodvalueLabel_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.foodvalueLabel_2.setWordWrap(True)
@@ -1148,6 +1766,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.addLayout(self.horizontalLayout_7)
         self.horizontalLayout.addWidget(self.history_card_frame_2)
         self.history_card_frame_3 = QtWidgets.QFrame(self.history_frame)
+        self.history_card_frame_3.setMinimumSize(QtCore.QSize(0, 160))
+        self.history_card_frame_3.setMaximumSize(QtCore.QSize(16777215, 260))
         self.history_card_frame_3.setStyleSheet("background-color: rgba(255, 255, 255, 30%);\n"
 "border: 1px solid  rgba(255, 255, 255, 40%);\n"
 "border-radius: 10%;\n"
@@ -1157,6 +1777,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.history_card_frame_3)
         self.verticalLayout_10.setObjectName("verticalLayout_10")
         self.dateLabel_3 = QtWidgets.QLabel(self.history_card_frame_3)
+        self.dateLabel_3.setMinimumSize(QtCore.QSize(0, 24))
+        self.dateLabel_3.setMaximumSize(QtCore.QSize(16777215, 24))
         self.dateLabel_3.setStyleSheet("color:#b4b4b4;\n"
 "background-color: none;\n"
 "border: none;\n"
@@ -1164,7 +1786,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;")
@@ -1181,7 +1802,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -1190,11 +1810,11 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
+"width:435px;\n"
+"")
         self.breakfastLabel_3.setScaledContents(False)
         self.breakfastLabel_3.setWordWrap(True)
         self.breakfastLabel_3.setObjectName("breakfastLabel_3")
@@ -1206,7 +1826,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -1215,11 +1834,11 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
+"width:435px;\n"
+"")
         self.lunchLabel_3.setScaledContents(False)
         self.lunchLabel_3.setWordWrap(True)
         self.lunchLabel_3.setObjectName("lunchLabel_3")
@@ -1231,7 +1850,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -1240,18 +1858,18 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
+"width:435px;\n"
+"")
         self.dinerLabel_3.setScaledContents(False)
         self.dinerLabel_3.setWordWrap(True)
         self.dinerLabel_3.setObjectName("dinerLabel_3")
         self.listFoodVerticalLayout_3.addWidget(self.dinerLabel_3)
         self.verticalLayout_10.addLayout(self.listFoodVerticalLayout_3)
         self.cardBorderLine_3 = QtWidgets.QFrame(self.history_card_frame_3)
-        self.cardBorderLine_3.setStyleSheet("background-color: rgba(173, 220, 130, 75)")
+        self.cardBorderLine_3.setStyleSheet("background-color: rgb(220, 220, 220)")
         self.cardBorderLine_3.setFrameShadow(QtWidgets.QFrame.Plain)
         self.cardBorderLine_3.setLineWidth(1)
         self.cardBorderLine_3.setFrameShape(QtWidgets.QFrame.HLine)
@@ -1260,13 +1878,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
         self.kaloriesLabel_3 = QtWidgets.QLabel(self.history_card_frame_3)
+        self.kaloriesLabel_3.setMinimumSize(QtCore.QSize(84, 0))
+        self.kaloriesLabel_3.setMaximumSize(QtCore.QSize(84, 16777215))
         self.kaloriesLabel_3.setStyleSheet("background-color: none;\n"
 "border: none;\n"
 "\n"
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -1275,11 +1894,11 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
+"width:435px;\n"
+"")
         self.kaloriesLabel_3.setScaledContents(False)
         self.kaloriesLabel_3.setWordWrap(True)
         self.kaloriesLabel_3.setObjectName("kaloriesLabel_3")
@@ -1291,7 +1910,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -1300,11 +1918,11 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
-"width:435px;")
+"width:435px;\n"
+"")
         self.foodvalueLabel_3.setScaledContents(False)
         self.foodvalueLabel_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.foodvalueLabel_3.setWordWrap(True)
@@ -1313,6 +1931,33 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.addLayout(self.horizontalLayout_8)
         self.horizontalLayout.addWidget(self.history_card_frame_3)
         self.verticalLayout_2.addLayout(self.horizontalLayout)
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(220, 540, 90, 90))
+        self.label.setStyleSheet("background-color: none;")
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("../img/catCook.png"))
+        self.label.setObjectName("label")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(30, 540, 211, 101))
+        self.label_3.setStyleSheet("background-color: none;")
+        self.label_3.setText("")
+        self.label_3.setPixmap(QtGui.QPixmap("../img/dialog.png"))
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(60, 550, 141, 81))
+        self.label_4.setStyleSheet("background-color: none;\n"
+"color: #2d2c2c;\n"
+"border:none;\n"
+"margin-top: 8px;\n"
+"margin-bottom:8px;\n"
+"\n"
+"text-align:left;\n"
+"vertical-align:text-top;\n"
+"font-size:14px;\n"
+"line-height:auto;\n"
+"border-style:hidden;\n"
+"outline:none;")
+        self.label_4.setObjectName("label_4")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -1323,24 +1968,49 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Умное меню"))
         self.prodHeaderLabel.setText(_translate("MainWindow", "Продукты:"))
         self.addProdPushButton.setText(_translate("MainWindow", "Добавить продукт"))
-        self.recomHeaderLabel.setText(_translate("MainWindow", "Рекомендации"))
-        self.infoRecomLabel.setText(_translate("MainWindow", "У вас давно лежит картошка. Посмотрите, что можно из нее приготовить:\n"
-""))
         self.storageHeaderLabel.setText(_translate("MainWindow", "Запасы"))
         self.addStorageItemPushButton.setText(_translate("MainWindow", "Добавить"))
         self.MenuHeaderLabel.setText(_translate("MainWindow", "Меню на сегодня"))
-        self.infoMenuLabel.setText(_translate("MainWindow", "На сегодня у вас не составлено меню. \n"
+        self.infoMenuLabel.setText(_translate("MainWindow", "На сегодня меню нет(\n"
 "Для составления меню нажмите кнопку ниже"))
         self.addMenuPushButton.setText(_translate("MainWindow", "Составить меню"))
+        self.menuTableLabel_fats_lunch.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_kalories_diner.setText(_translate("MainWindow", "0"))
+        self.menuTableHeaderLabel_kalories.setText(_translate("MainWindow", "Ккал:"))
+        self.menuTableLabel_AllKPFC_kalories.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_dish_diner.setText(_translate("MainWindow", "Нет ужина"))
+        self.menuTableLabel_dish_lunch.setText(_translate("MainWindow", "Нет обеда"))
+        self.menuTableHeaderLabel_breakfast.setText(_translate("MainWindow", "Завтрак"))
+        self.menuTableLabel_fats_diner.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_proteins_diner.setText(_translate("MainWindow", "0"))
+        self.menuTableHeaderLabel_lunch.setText(_translate("MainWindow", "Обед"))
+        self.menuTableHeaderLabel_diner.setText(_translate("MainWindow", "Ужин"))
+        self.menuTableHeaderLabel_AllKPFC.setText(_translate("MainWindow", "Итого:"))
+        self.menuTableLabel_kalories_breakfast.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_proteins_breakfast.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_carboh_breakfast.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_fats_breakfast.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_proteins_lunch.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_AllKPFC_carbons.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_carboh_diner.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_dish_breakfast.setText(_translate("MainWindow", "Нет завтрака"))
+        self.menuTableHeaderLabel_dish.setText(_translate("MainWindow", "Блюдо:"))
+        self.menuTableHeaderLabel_proteins.setText(_translate("MainWindow", "Б:"))
+        self.menuTableLabel_carboh_lunch.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_AllKPFC_proteins.setText(_translate("MainWindow", "0"))
+        self.menuTableHeaderLabel_fats.setText(_translate("MainWindow", "Ж:"))
+        self.menuTableHeaderLabel_carboh.setText(_translate("MainWindow", "У:"))
+        self.menuTableLabel_AllKPFC_fats.setText(_translate("MainWindow", "0"))
+        self.menuTableLabel_kalories_lunch.setText(_translate("MainWindow", "0"))
         self.dishesHeaderLabel.setText(_translate("MainWindow", "Блюда:"))
         self.addDishPushButton.setText(_translate("MainWindow", "Добавить блюдо"))
         self.hostoryHeaderLabel.setText(_translate("MainWindow", "История"))
-        self.dateLabel.setText(_translate("MainWindow", "11.11.2024, пн"))
-        self.breakfastLabel.setText(_translate("MainWindow", "Завтрака нет"))
-        self.lunchLabel.setText(_translate("MainWindow", "Обеда нет"))
-        self.dinerLabel.setText(_translate("MainWindow", "Ужина нет"))
-        self.kaloriesLabel.setText(_translate("MainWindow", "0 Ккал"))
-        self.foodvalueLabel.setText(_translate("MainWindow", "Б: 0 Ж: 0 У: 0"))
+        self.dateLabel_1.setText(_translate("MainWindow", "11.11.2024, пн"))
+        self.breakfastLabel_1.setText(_translate("MainWindow", "Завтрака нет"))
+        self.lunchLabel_1.setText(_translate("MainWindow", "Обеда нет"))
+        self.dinerLabel_1.setText(_translate("MainWindow", "Ужина нет"))
+        self.kaloriesLabel_1.setText(_translate("MainWindow", "0 Ккал"))
+        self.foodvalueLabel_1.setText(_translate("MainWindow", "Б: 0 Ж: 0 У: 0"))
         self.dateLabel_2.setText(_translate("MainWindow", "11.11.2024, пн"))
         self.breakfastLabel_2.setText(_translate("MainWindow", "Завтрака нет"))
         self.lunchLabel_2.setText(_translate("MainWindow", "Обеда нет"))
@@ -1353,4 +2023,6 @@ class Ui_MainWindow(object):
         self.dinerLabel_3.setText(_translate("MainWindow", "Ужина нет"))
         self.kaloriesLabel_3.setText(_translate("MainWindow", "0 Ккал"))
         self.foodvalueLabel_3.setText(_translate("MainWindow", "Б: 0 Ж: 0 У: 0"))
-import res-project_rc
+        self.label_4.setText(_translate("MainWindow", "Об авторе:\n"
+"Лочкарева Ирина\n"
+"ИСТ-213"))

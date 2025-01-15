@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>540</width>
-    <height>618</height>
+    <height>602</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -24,6 +24,15 @@
   </property>
   <property name="windowTitle">
    <string>Умное меню - Добавить блюдо</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../img/catCook.png</normaloff>../img/catCook.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+
+font: 8pt &quot;STXihei&quot;;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="verticalFrame">
@@ -62,16 +71,18 @@
           <bool>true</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">margin-top: 8px;
-margin-bottom:8px;
-  width: 435px;
-  height: 24px;
-  color: #2d2c2c;
-  font-size: 20px;
-  font-family: Inter, &quot;Extra Bold&quot;;
-  font-weight: 800;
-  text-align: left;
-  vertical-align: top</string>
+          <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+
+width: 435px;
+height: 24px;
+
+font: 16pt &quot;Extra Bold&quot;;
+
+font-weight: 800;
+text-align: left;
+vertical-align: top</string>
          </property>
          <property name="text">
           <string>Информация о блюде</string>
@@ -84,13 +95,13 @@ margin-bottom:8px;
           <widget class="QLabel" name="unitIngredLoabel_6">
            <property name="minimumSize">
             <size>
-             <width>72</width>
+             <width>0</width>
              <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>72</width>
+             <width>16777215</width>
              <height>16777215</height>
             </size>
            </property>
@@ -104,13 +115,10 @@ margin-bottom:8px;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-
-min-width: 72px;
-max-width: 72px;</string>
+</string>
            </property>
            <property name="text">
             <string>Название:</string>
@@ -132,7 +140,7 @@ border:2px solid rgba(100, 100, 100, 25);
 
 color: #2d2c2c;
 
-width:360px;
+width:320px;
 height:32px;
 
 padding-left: 8px;
@@ -141,7 +149,6 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
            </property>
@@ -185,7 +192,6 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
          </property>
@@ -194,6 +200,40 @@ top:8px;</string>
          </property>
          <property name="placeholderText">
           <string>Введите описание блюда</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="calculateAutoNutritValuecheckBox">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">margin-top: 8px;
+background-color: none;
+border: none;
+
+text-align:left;
+vertical-align:text-top;
+font-size:12px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+
+color:#30353b;
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+width:435px;</string>
+         </property>
+         <property name="text">
+          <string>Заполнять калории автоматически</string>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -223,7 +263,6 @@ margin-bottom:8px;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -260,12 +299,14 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
            </property>
            <property name="text">
             <string/>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
            </property>
            <property name="cursorPosition">
             <number>0</number>
@@ -302,7 +343,6 @@ margin-bottom:8px;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -323,6 +363,18 @@ max-width: 20px;</string>
          </item>
          <item>
           <widget class="QLineEdit" name="proteinsLineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>46</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>46</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">background-color:#ffffff;
 border-radius:4%;
@@ -338,7 +390,6 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
            </property>
@@ -380,7 +431,6 @@ margin-bottom:8px;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -401,6 +451,18 @@ max-width: 20px;</string>
          </item>
          <item>
           <widget class="QLineEdit" name="fatsLineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>46</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>46</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">background-color:#ffffff;
 border-radius:4%;
@@ -416,7 +478,6 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
            </property>
@@ -458,7 +519,6 @@ margin-bottom:8px;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -479,6 +539,18 @@ max-width: 20px;</string>
          </item>
          <item>
           <widget class="QLineEdit" name="carbohLineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>46</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>46</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">background-color:#ffffff;
 border-radius:4%;
@@ -494,7 +566,6 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
            </property>
@@ -520,16 +591,18 @@ top:8px;</string>
           <bool>true</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">margin-top: 8px;
-margin-bottom:8px;
-  width: 435px;
-  height: 24px;
-  color: #2d2c2c;
-  font-size: 20px;
-  font-family: Inter, &quot;Extra Bold&quot;;
-  font-weight: 800;
-  text-align: left;
-  vertical-align: top</string>
+          <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+
+width: 435px;
+height: 24px;
+
+font: 16pt &quot;Extra Bold&quot;;
+
+font-weight: 800;
+text-align: left;
+vertical-align: top</string>
          </property>
          <property name="text">
           <string>Ингредиенты:</string>
@@ -581,7 +654,6 @@ background: #ADDC81;
 text-align:center;
 vertical-align:center;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 font-weight: bold;
 
@@ -602,69 +674,6 @@ background: #AAAAFF;
            </property>
            <property name="text">
             <string>Сохранить</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="cancelDishPushButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>48</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>48</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-height:32px;
-width:auto;
-
-color: #30353B;
-background: #ADDC81;
-margin-top: 16px;
-
-text-align:center;
-vertical-align:center;
-font-size:12px;
-font-family:Inter;
-line-height:auto;
-font-weight: bold;
-
-border-radius:4%;
-}
-
-QPushButton:hover {
-background: #AAAA81;
-border: 2px solid rgba(146, 146, 120, 75);
-}
-
-QPushButton:pressed{
-background: #AAAAFF;
-}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>../icons/bx_trash.svg</normaloff>../icons/bx_trash.svg</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>24</width>
-             <height>24</height>
-            </size>
            </property>
           </widget>
          </item>

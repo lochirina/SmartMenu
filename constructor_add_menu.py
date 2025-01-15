@@ -125,21 +125,24 @@ class AddMenuWindow:
             # Обновляем текстовые поля интерфейса
             if self.current_meal == "завтрак":
                 print(f"Что хотите на {self.current_meal}?")
-                self.win.chooseMenuHeaderLabel.setText(f"Что хотите на {self.current_meal}?")
                 self.current_meal = "обед"
+                self.win.chooseMenuHeaderLabel.setText(f"Что хотите на {self.current_meal}?")
                 self.win.breakfastLabel.setText(f"{selected_dish_name}")
                 self.update_available_dishes()
             elif self.current_meal == "обед":
-                self.win.lunchLabel.setText(f"{selected_dish_name}")
                 self.current_meal = "ужин"
-                print(f"Что хотите на {self.current_meal}?")
                 self.win.chooseMenuHeaderLabel.setText(f"Что хотите на {self.current_meal}?")
+                self.win.lunchLabel.setText(f"{selected_dish_name}")
+                print(f"Что хотите на {self.current_meal}?")
                 self.update_available_dishes()
             else:
                 self.win.dinerLabel.setText(f"{selected_dish_name}")
 
                 # Финальный этап: сохранение меню в базу данных
                 self.save_menu_to_db()
+
+                self.parent.menu_display_controller.update_menu_display()  # Обновляем информацию о меню
+                self.parent.menu_history.load_menu_history()  # Обновляем историю меню
 
                 # Выводим итоговое меню
                 print("\nВаше меню на день:")
@@ -179,7 +182,5 @@ class AddMenuWindow:
 
         except Exception as e:
             print(f"Ошибка при сохранении меню в базу данных: {e}")
-# def main():
-#     app = QtWidgets.QApplication(sys.argv)
-#     window = AddMenuWindow()
-#     sys.exit(app.exec_())
+
+

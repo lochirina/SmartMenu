@@ -1,9 +1,10 @@
-from PyQt5 import QtWidgets, uic
 import sqlite3
 
+from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QApplication
 
 from db_controller import DatabaseController
+
 
 class AddDishWindow:
     def __init__(self):
@@ -11,15 +12,15 @@ class AddDishWindow:
         self.win = uic.loadUi("static/ui/add_dish.ui")
         self.db = DatabaseController()
 
-        # Инициализируем ComboBox с продуктами
+        # Инициализация ComboBox с продуктами
         self.initialize_ingredient_comboboxes()
 
-        # Подключаем обработчик для чекбокса
+        # Подключение обработчика для чекбокса
         self.win.calculateAutoNutritValuecheckBox.stateChanged.connect(
             self.handle_auto_calculate_toggle
         )
 
-        # Подключаем обработчик изменения значения в ComboBox
+        # Подключение обработчик изменения значения в ComboBox
         for i in range(self.win.verticalLayout_2.count()):
             item = self.win.verticalLayout_2.itemAt(i)
             if isinstance(item, QtWidgets.QHBoxLayout):
@@ -27,13 +28,6 @@ class AddDishWindow:
                 if isinstance(combo, QtWidgets.QComboBox):
                     self.load_products_to_combobox(combo)
                     combo.currentTextChanged.connect(self.handle_ingredient_change)
-
-        # # Добавляем обработчик изменения значения в ComboBox
-        # for combo in self.win.findChildren(QtWidgets.QComboBox):
-        #     if combo.objectName().startswith('ingredientComboBox'):
-        #         combo.currentTextChanged.connect(
-        #             lambda text, cb=combo: self.update_unit_label(cb)
-        #         )
 
         self.win.addDishPushButton.clicked.connect(self.action_add_dish)
         self.win.show()
@@ -90,6 +84,7 @@ class AddDishWindow:
             # Создаем новый SpinBox
             new_spin = QtWidgets.QSpinBox()
             new_spin.setObjectName(f"countIngredientsSpinBox{layout_num}")
+            new_spin.setMaximum(9999)
 
             # Создаем новый Label
             new_label = QtWidgets.QLabel()
@@ -123,7 +118,7 @@ class AddDishWindow:
                     max-height: 32px;
                     min-height: 32px;
                     font-size: 14px; 
-                    font-family: Inter; 
+                    
                     padding-left: 8px;
                 }
                 QComboBox::drop-down {
@@ -133,7 +128,7 @@ class AddDishWindow:
                     border-top-right-radius: 4%;
                     border-bottom-right-radius: 4%;
                     font-size: 14px; 
-                    font-family: Inter;
+                    
                     padding-left: 8px; 
                 }
             """)
@@ -175,8 +170,6 @@ class AddDishWindow:
             """)
 
             # Увеличиваем высоту окна
-            # current_height = self.win.height()
-            # self.win.setFixedHeight(current_height + 32)
             self.update_frame_and_window_height()
 
             # Обеновление стилей
@@ -222,40 +215,40 @@ class AddDishWindow:
         self.win.setFixedHeight(current_window_height + delta)
 
     def add_ingredient_row(self):
-        # Создаем новый горизонтальный layout
+        # Создание нового горизонтального layout
         self.ingr_layout_counter += 1
         new_horiz_layout = QtWidgets.QHBoxLayout()
         new_horiz_layout.setObjectName(f"ingrHorizontalLayout{self.ingr_layout_counter}")
 
-        # Создаем и настраиваем новый ComboBox
+        # Создание и настройка нового ComboBox
         new_combo = QtWidgets.QComboBox()
         new_combo.setObjectName(f"ingredientComboBox_{self.ingr_layout_counter}")
-        # Применяем такой же стиль как у остальных ComboBox
+        # Применениен такой же стиль как у остальных ComboBox
         new_combo.setStyleSheet(self.win.ingredientComboBox.styleSheet())
         self.load_products_to_combobox(new_combo)
         new_combo.currentTextChanged.connect(self.check_and_add_ingredient_row)
 
-        # Создаем и настраиваем новый SpinBox
+        # Создать и настраиваем новый SpinBox
         new_spin = QtWidgets.QSpinBox()
         new_spin.setObjectName(f"countIngredientsSpinBox_{self.ingr_layout_counter}")
 
         print(f"countIngredientsSpinBox_{self.ingr_layout_counter}")
 
-        # Применяем такой же стиль как у остальных SpinBox
+        # Применение такой же стиль как у остальных SpinBox
         new_spin.setStyleSheet(self.win.countIngredientsSpinBox.styleSheet())
 
-        # Добавляем виджеты в layout
+        # Добавление виджетов в layout
         new_horiz_layout.addWidget(new_combo)
         new_horiz_layout.addWidget(new_spin)
 
-        # Находим индекс кнопки "Добавить"
+        # Нахождение индекса кнопки "Добавить"
         add_button_index = -1
         for i in range(self.win.verticalLayout_2.count()):
             if self.win.verticalLayout_2.itemAt(i).widget() == self.win.addDishPushButton:
                 add_button_index = i
                 break
 
-        # Вставляем новый layout перед кнопкой
+        # Вставить новый layout перед кнопкой
         if add_button_index != -1:
             self.win.verticalLayout_2.insertLayout(add_button_index, new_horiz_layout)
         else:
@@ -295,19 +288,19 @@ class AddDishWindow:
 
     def action_add_dish(self):
         """Обработчик нажатия кнопки Добавить"""
-        # Получаем данные из полей ввода
+        # Получение данных из полей ввода
         name = self.win.nameOfDishLineEdit.text()
         description = self.win.infoDishPlainTextEdit.toPlainText()
         auto_calculate = self.win.calculateAutoNutritValuecheckBox.isChecked() # Булевое значение
 
-        # Проверяем обязательные поля
+        # Проверка обязательные поля
         if not name:
             QtWidgets.QMessageBox.warning(self.win, "Ошибка",
                                           "Введите название блюда")
             return
 
         try:
-            # Собираем ингредиенты
+            # Сбор ингредиентов
             ingredients = []
             for i in range(self.win.verticalLayout_2.count()):
                 item = self.win.verticalLayout_2.itemAt(i)
@@ -318,18 +311,18 @@ class AddDishWindow:
                         ingredients.append((combo.currentText(), spin.value()))
                         print(ingredients)
 
-            # Получаем пищевую ценность
+            # Получить пищевую ценность
             if auto_calculate:
                 # Автоматический расчет на основе ингредиентов
                 calories, proteins, fats, carbs = self.db.calculate_nutrition(ingredients)
             else:
-                # Берем значения из полей ввода
+                # Взять значения из полей ввода
                 calories = float(self.win.kaloriesLineEdit.text() or 0)
                 proteins = float(self.win.proteinsLineEdit.text() or 0)
                 fats = float(self.win.fatsLineEdit.text() or 0)
                 carbs = float(self.win.carbohLineEdit.text() or 0)
 
-            # Добавляем блюдо в базу данных
+            # Добавление блюдо в базу данных
             dish_id = self.db.add_dish(name, description, auto_calculate, calories,
                                        proteins, fats, carbs)
 
@@ -369,7 +362,7 @@ class AddDishWindow:
         self.win.fatsLineEdit.clear()
         self.win.carbohLineEdit.clear()
 
-        # Очищаем все ComboBox и SpinBox ингредиентов
+        # Очищение всех ComboBox и SpinBox ингредиентов
         for i in range(self.win.verticalLayout_2.count()):
             item = self.win.verticalLayout_2.itemAt(i)
             if isinstance(item, QtWidgets.QHBoxLayout):
@@ -380,6 +373,6 @@ class AddDishWindow:
                 if isinstance(spin, QtWidgets.QSpinBox):
                     spin.setValue(0)
 
-        # Сбрасываем чекбокс автоматического расчета
+        # Сбррос чекбокса автоматического расчета
         self.win.calculateAutoNutritValuecheckBox.setChecked(False)
 

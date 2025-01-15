@@ -36,11 +36,23 @@ class DatabaseController:
         try:
             conn = sqlite3.connect('db/smart_menu.db')
             cursor = conn.cursor()
+
+            # Получение ID единицы измерения по ее названию
+            cursor.execute('''
+                    SELECT id FROM measurement_units WHERE name = ?
+                ''', (unit,))
+            unit_id = cursor.fetchone()
+
+            if not unit_id:
+                raise ValueError(f"Единица измерения '{unit}' не найдена в таблице measurement_units.")
+
+            unit_id = unit_id[0]  # Извлекаем ID из результата
+
             cursor.execute('''
                 UPDATE products
                 SET name = ?, measurement_unit_id = ?, carbohydrates = ?, fats = ?, calories = ?, proteins = ?, shelf_life_days = ?
                 WHERE id = ?
-            ''', (name, unit, carbohydrates, fats, calories, proteins, shelf_life, product_id))
+            ''', (name, unit_id, carbohydrates, fats, calories, proteins, shelf_life, product_id))
 
             conn.commit()
             conn.close()
@@ -141,6 +153,7 @@ class DatabaseController:
                     carbs += (product[3] * amount)
 
         return calories, proteins, fats, carbs
+
     def update_product_quantity(self, product_id, quantity):
         conn = sqlite3.connect(self.db_name)
         cursor = conn.cursor()
@@ -455,3 +468,133 @@ class DatabaseController:
             raise
         finally:
             conn.close()
+
+    def delete_today_menu(self):
+        """Удаляет меню на сегодняшний день из базы данных."""
+        try:
+            conn = sqlite3.connect(self.db_name)
+            cursor = conn.cursor()
+
+            # Получаем текущую дату
+            today = datetime.today().strftime("%Y-%m-%d")
+
+            # Проверяем, есть ли записи меню на сегодняшний день
+            cursor.execute("SELECT COUNT(*) FROM menu WHERE date = ?", (today,))
+            count = len(cursor.fetchone())
+
+            if count == 0:
+                conn.close()
+                return False  # Меню на сегодняшний день отсутствует
+
+            # Удаляем записи меню
+            cursor.execute("DELETE FROM menu WHERE date = ?", (today,))
+            conn.commit()
+            conn.close()
+            return True  # Успешное удаление
+
+        except sqlite3.Error as e:
+            print(f"Ошибка при удалении меню: {e}")
+            return None  # Указывает на ошибку
+
+    def get_today_menu(self):
+        """
+        Возвращает список блюд (прием пищи, dish_id) для меню на сегодняшний день.
+        """
+        conn = sqlite3.connect(self.db_name)
+        print(self.db_name)
+        cursor = conn.cursor()
+
+        try:
+            cursor.execute("""
+                SELECT breakfast_dish_id, lunch_dish_id, dinner_dish_id
+                FROM menu
+                WHERE date = DATE('now')
+            """)
+            # print("число записей", cursor.fetchall())
+
+            today_menu1 = cursor.fetchall()
+            print("число записей",today_menu1)
+
+            conn.commit()
+            return today_menu1
+
+        except sqlite3.Error as e:
+            print(f"Ошибка базы данных при получении меню на сегодня: {e}")
+            raise
+        finally:
+            conn.close()
+
+    def get_dish_by_id(self, dish_id):
+        with sqlite3.connect(self.db_name) as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT name, description, auto_calorie_calc, calories, proteins, fats, carbohydrates
+                FROM dishes
+                WHERE id = ?
+            """, (dish_id,))
+            row = cursor.fetchone()
+            if row:
+                return {
+                    'name': row[0],
+                    'description': row[1],
+                    'auto_calorie_calc': bool(row[2]),
+                    'calories': row[3],
+                    'proteins': row[4],
+                    'fats': row[5],
+                    'carbohydrates': row[6],
+                }
+
+    def get_ingredients_by_dish_id(self, dish_id):
+        with sqlite3.connect(self.db_name) as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT p.name, di.quantity, mu.name
+                FROM dish_ingredients di
+                JOIN products p ON di.product_id = p.id
+                JOIN measurement_units mu ON p.measurement_unit_id = mu.id
+                WHERE di.dish_id = ?
+            """, (dish_id,))
+            rows = cursor.fetchall()
+            return [{'name': r[0], 'quantity': r[1], 'measurement_unit': r[2]} for r in rows]
+
+    def update_dish(self, dish_id, name, description, auto_calculate, calories, proteins, fats, carbs):
+        with sqlite3.connect(self.db_name) as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                UPDATE dishes
+                SET name = ?, description = ?, auto_calorie_calc = ?, calories = ?, proteins = ?, fats = ?, carbohydrates = ?
+                WHERE id = ?
+            """, (name, description, auto_calculate, calories, proteins, fats, carbs, dish_id))
+            conn.commit()
+
+    def fetch_menu_history(self):
+        """
+        Извлекает историю меню из базы данных.
+        """
+        try:
+            # Подключение к базе данных
+            conn = sqlite3.connect('db/smart_menu.db')
+            cursor = conn.cursor()
+
+            # SQL-запрос для объединения данных из таблиц menu и dishes
+            query = '''
+            SELECT 
+                m.date,
+                (SELECT d1.name FROM dishes d1 WHERE d1.id = m.breakfast_dish_id) AS breakfast_dish_name,
+                (SELECT d2.name FROM dishes d2 WHERE d2.id = m.lunch_dish_id) AS lunch_dish_name,
+                (SELECT d3.name FROM dishes d3 WHERE d3.id = m.dinner_dish_id) AS dinner_dish_name,
+                m.total_calories,
+                m.total_proteins,
+                m.total_fats,
+                m.total_carbohydrates
+            FROM menu m
+            '''
+            cursor.execute(query)
+            data = cursor.fetchall()
+
+            # Закрываем соединение
+            conn.close()
+            return data
+        except Exception as e:
+            QtWidgets.QMessageBox.critical(self.win, "Ошибка", f"Ошибка загрузки данных меню: {str(e)}")
+            return []

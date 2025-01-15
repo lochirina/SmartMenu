@@ -4,7 +4,6 @@ import sqlite3
 
 from db_controller import DatabaseController
 
-
 class AddStorageWindow:
     def __init__(self):
 
@@ -19,7 +18,6 @@ class AddStorageWindow:
 
         # Подключение обработчиков кнопок
         self.win.addStoragePushButton.clicked.connect(self.add_storage_item)
-        self.win.cancelStorageItemPushButton.clicked.connect(self.win.close)
 
         self.win.show()
 
@@ -92,7 +90,6 @@ class EditStorageWindow:
         # Подключение обработчиков кнопок
         # self.win.addStoragePushButton.clicked.disconnect()
         self.win.addStoragePushButton.clicked.connect(self.update_storage_item)
-        self.win.cancelStorageItemPushButton.clicked.connect(self.win.close)
         print("Кнопки инициированы")
 
         self.win.show()

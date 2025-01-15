@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui_add_dish.ui'
+# Form implementation generated from reading ui file 'add_dish.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -17,6 +17,12 @@ class Ui_MainWindow(object):
         MainWindow.resize(540, 618)
         MainWindow.setMinimumSize(QtCore.QSize(540, 0))
         MainWindow.setMaximumSize(QtCore.QSize(540, 16777215))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../img/catCook.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+        MainWindow.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"font: 8pt \"STXihei\";")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalFrame = QtWidgets.QFrame(self.centralwidget)
@@ -58,7 +64,6 @@ class Ui_MainWindow(object):
 "vertical-align:text-top;\n"
 "\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "left:12px;\n"
 "top:8px;")
         self.nameOfDishLineEdit.setText("")
@@ -99,7 +104,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -108,7 +112,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -134,7 +137,6 @@ class Ui_MainWindow(object):
 "vertical-align:text-top;\n"
 "\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "left:12px;\n"
 "top:8px;")
         self.kaloriesLineEdit.setText("")
@@ -143,6 +145,8 @@ class Ui_MainWindow(object):
         self.kaloriesLineEdit.setObjectName("kaloriesLineEdit")
         self.nutritiansHorizontalLayout.addWidget(self.kaloriesLineEdit)
         self.proteinsLineEdit = QtWidgets.QLineEdit(self.verticalFrame)
+        self.proteinsLineEdit.setMinimumSize(QtCore.QSize(46, 0))
+        self.proteinsLineEdit.setMaximumSize(QtCore.QSize(46, 16777215))
         self.proteinsLineEdit.setStyleSheet("background-color:#ffffff;\n"
 "border-radius:4%;\n"
 "border:2px solid rgba(100, 100, 100, 25);\n"
@@ -157,7 +161,6 @@ class Ui_MainWindow(object):
 "vertical-align:text-top;\n"
 "\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "left:12px;\n"
 "top:8px;")
         self.proteinsLineEdit.setText("")
@@ -166,6 +169,8 @@ class Ui_MainWindow(object):
         self.proteinsLineEdit.setObjectName("proteinsLineEdit")
         self.nutritiansHorizontalLayout.addWidget(self.proteinsLineEdit)
         self.fatsLineEdit = QtWidgets.QLineEdit(self.verticalFrame)
+        self.fatsLineEdit.setMinimumSize(QtCore.QSize(46, 0))
+        self.fatsLineEdit.setMaximumSize(QtCore.QSize(46, 16777215))
         self.fatsLineEdit.setStyleSheet("background-color:#ffffff;\n"
 "border-radius:4%;\n"
 "border:2px solid rgba(100, 100, 100, 25);\n"
@@ -180,7 +185,6 @@ class Ui_MainWindow(object):
 "vertical-align:text-top;\n"
 "\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "left:12px;\n"
 "top:8px;")
         self.fatsLineEdit.setText("")
@@ -189,6 +193,8 @@ class Ui_MainWindow(object):
         self.fatsLineEdit.setObjectName("fatsLineEdit")
         self.nutritiansHorizontalLayout.addWidget(self.fatsLineEdit)
         self.carbohLineEdit = QtWidgets.QLineEdit(self.verticalFrame)
+        self.carbohLineEdit.setMinimumSize(QtCore.QSize(46, 0))
+        self.carbohLineEdit.setMaximumSize(QtCore.QSize(46, 16777215))
         self.carbohLineEdit.setStyleSheet("background-color:#ffffff;\n"
 "border-radius:4%;\n"
 "border:2px solid rgba(100, 100, 100, 25);\n"
@@ -203,7 +209,6 @@ class Ui_MainWindow(object):
 "vertical-align:text-top;\n"
 "\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "left:12px;\n"
 "top:8px;")
         self.carbohLineEdit.setText("")
@@ -239,7 +244,6 @@ class Ui_MainWindow(object):
 "                    max-height: 32px;\n"
 "                    min-height: 32px;\n"
 "                    font-size: 14px; \n"
-"                    font-family: Inter; \n"
 "                    padding-left: 8px;\n"
 "                }\n"
 "                QComboBox::drop-down {\n"
@@ -249,7 +253,6 @@ class Ui_MainWindow(object):
 "                    border-top-right-radius: 4%;\n"
 "                    border-bottom-right-radius: 4%;\n"
 "                    font-size: 14px; \n"
-"                    font-family: Inter;\n"
 "                    padding-left: 8px; \n"
 "                }")
         self.ingredientComboBox_1.setDuplicatesEnabled(False)
@@ -269,9 +272,9 @@ class Ui_MainWindow(object):
 "                    min-width: 56px;\n"
 "                    max-width: 56px;\n"
 "                    font-size: 14px; \n"
-"                    font-family: Inter; \n"
 "                    padding-left: 8px;\n"
 "                }")
+        self.countIngredientsSpinBox_1.setMaximum(9999)
         self.countIngredientsSpinBox_1.setProperty("value", 1)
         self.countIngredientsSpinBox_1.setObjectName("countIngredientsSpinBox_1")
         self.ingrHorizontalLayout1.addWidget(self.countIngredientsSpinBox_1)
@@ -285,7 +288,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -310,7 +312,6 @@ class Ui_MainWindow(object):
 "                    max-height: 32px;\n"
 "                    min-height: 32px;\n"
 "                    font-size: 14px; \n"
-"                    font-family: Inter; \n"
 "                    padding-left: 8px;\n"
 "                }\n"
 "                QComboBox::drop-down {\n"
@@ -320,7 +321,6 @@ class Ui_MainWindow(object):
 "                    border-top-right-radius: 4%;\n"
 "                    border-bottom-right-radius: 4%;\n"
 "                    font-size: 14px; \n"
-"                    font-family: Inter;\n"
 "                    padding-left: 8px; \n"
 "                }")
         self.ingredientComboBox_2.setDuplicatesEnabled(False)
@@ -340,9 +340,9 @@ class Ui_MainWindow(object):
 "                    min-width: 56px;\n"
 "                    max-width: 56px;\n"
 "                    font-size: 14px; \n"
-"                    font-family: Inter; \n"
 "                    padding-left: 8px;\n"
 "                }")
+        self.countIngredientsSpinBox_2.setMaximum(9999)
         self.countIngredientsSpinBox_2.setProperty("value", 1)
         self.countIngredientsSpinBox_2.setObjectName("countIngredientsSpinBox_2")
         self.ingrHorizontalLayout2.addWidget(self.countIngredientsSpinBox_2)
@@ -356,7 +356,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -379,7 +378,6 @@ class Ui_MainWindow(object):
 "text-align:center;\n"
 "vertical-align:center;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "font-weight: bold;\n"
 "\n"

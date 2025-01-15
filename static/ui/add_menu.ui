@@ -25,6 +25,15 @@
   <property name="windowTitle">
    <string>Умное меню - составить меню</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../img/catCook.png</normaloff>../img/catCook.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+
+font: 8pt &quot;STXihei&quot;;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
@@ -82,50 +91,15 @@ border:none;
 
 width: 435px;
 height: 24px;
-margin-top: 8px;
-margin-bottom:8px;
 
-font-size: 20px;
-font-family: Inter, &quot;Extra Bold&quot;;
+font: 16pt &quot;Extra Bold&quot;;
+
 font-weight: 800;
 text-align: left;
 vertical-align: top</string>
            </property>
            <property name="text">
-            <string>Что хотите на завтрак:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="sortProdPushButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color:none;
-height:24px;
-width:24px;
-padding:0px;
-position:relative;
-text-align: center;
-border: none;
-border-radius: 2%;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>../img/bx_sort-a-z.svg</normaloff>../img/bx_sort-a-z.svg</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>24</width>
-             <height>24</height>
-            </size>
+            <string>Что хотите на завтрак?</string>
            </property>
           </widget>
          </item>
@@ -146,7 +120,6 @@ background: #ADDC81;
 text-align:center;
 vertical-align:center;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 font-weight: bold;
 
@@ -182,7 +155,6 @@ background: #ADDC81;
 text-align:center;
 vertical-align:center;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 font-weight: bold;
 
@@ -218,7 +190,6 @@ background: #ADDC81;
 text-align:center;
 vertical-align:center;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 font-weight: bold;
 
@@ -254,7 +225,6 @@ background: #ADDC81;
 text-align:center;
 vertical-align:center;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 font-weight: bold;
 
@@ -290,7 +260,6 @@ background: #ADDC81;
 text-align:center;
 vertical-align:center;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 font-weight: bold;
 
@@ -326,7 +295,6 @@ background: #ADDC81;
 text-align:center;
 vertical-align:center;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 font-weight: bold;
 
@@ -393,7 +361,6 @@ vertical-align: top</string>
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -444,7 +411,6 @@ width:435px;</string>
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -495,7 +461,6 @@ width:435px;</string>
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui_add_storage_item.ui'
+# Form implementation generated from reading ui file 'add_storage_item.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -15,6 +15,12 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(542, 218)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../img/catCook.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+        MainWindow.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"font: 14pt \"STXihei\";")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalFrame = QtWidgets.QFrame(self.centralwidget)
@@ -36,11 +42,9 @@ class Ui_MainWindow(object):
 "\n"
 "width: 435px;\n"
 "height: 24px;\n"
-"margin-top: 8px;\n"
-"margin-bottom:8px;\n"
 "\n"
-"font-size: 20px;\n"
-"font-family: Inter, \"Extra Bold\";\n"
+"font: 16pt \"Extra Bold\";\n"
+"\n"
 "font-weight: 800;\n"
 "text-align: left;\n"
 "vertical-align: top")
@@ -59,7 +63,6 @@ class Ui_MainWindow(object):
 "    height: 32px; /* Высота */\n"
 "    padding-left: 8px; /* Отступ для текста */\n"
 "    font-size: 14px; /* Размер шрифта */\n"
-"    font-family: Inter; /* Шрифт */\n"
 "}\n"
 "\n"
 "QComboBox::drop-down {\n"
@@ -109,9 +112,9 @@ class Ui_MainWindow(object):
 "vertical-align:text-top;\n"
 "\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "left:12px;\n"
 "top:8px;")
+        self.storeSpinBox.setMaximum(9999)
         self.storeSpinBox.setObjectName("storeSpinBox")
         self.storeHorizontalLayout_3.addWidget(self.storeSpinBox)
         self.unitStoregaItemLoabel = QtWidgets.QLabel(self.verticalFrame)
@@ -124,7 +127,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -150,20 +152,12 @@ class Ui_MainWindow(object):
 "\n"
 "text-align:left;\n"
 "vertical-align:text-top;\n"
-"font-size:12px;\n"
-"font-family:Inter;\n"
+"font-size:14px;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
 "\n"
 "color:#30353b;\n"
-"text-align:left;\n"
-"vertical-align:text-top;\n"
-"font-size:14px;\n"
-"font-family:Inter;\n"
-"line-height:auto;\n"
-"border-style:hidden;\n"
-"outline:none;\n"
 "width:435px;")
         self.purchaseDateLabel.setScaledContents(False)
         self.purchaseDateLabel.setWordWrap(True)
@@ -185,7 +179,6 @@ class Ui_MainWindow(object):
 "vertical-align:text-top;\n"
 "\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "left:12px;\n"
 "top:8px;")
         self.purchaseDateDateEdit.setObjectName("purchaseDateDateEdit")
@@ -205,7 +198,6 @@ class Ui_MainWindow(object):
 "text-align:center;\n"
 "vertical-align:center;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "font-weight: bold;\n"
 "\n"
@@ -225,47 +217,6 @@ class Ui_MainWindow(object):
 "")
         self.addStoragePushButton.setObjectName("addStoragePushButton")
         self.actionsStorageHorizontalLayout.addWidget(self.addStoragePushButton)
-        self.cancelStorageItemPushButton = QtWidgets.QPushButton(self.verticalFrame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.cancelStorageItemPushButton.sizePolicy().hasHeightForWidth())
-        self.cancelStorageItemPushButton.setSizePolicy(sizePolicy)
-        self.cancelStorageItemPushButton.setMinimumSize(QtCore.QSize(48, 48))
-        self.cancelStorageItemPushButton.setMaximumSize(QtCore.QSize(48, 48))
-        self.cancelStorageItemPushButton.setStyleSheet("QPushButton{\n"
-"height:32px;\n"
-"width:auto;\n"
-"\n"
-"color: #30353B;\n"
-"background: #ADDC81;\n"
-"margin-top: 16px;\n"
-"\n"
-"text-align:center;\n"
-"vertical-align:center;\n"
-"font-size:12px;\n"
-"font-family:Inter;\n"
-"line-height:auto;\n"
-"font-weight: bold;\n"
-"\n"
-"border-radius:4%;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"background: #AAAA81;\n"
-"border: 2px solid rgba(146, 146, 120, 75);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"background: #AAAAFF;\n"
-"}")
-        self.cancelStorageItemPushButton.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../icons/bx_trash.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.cancelStorageItemPushButton.setIcon(icon)
-        self.cancelStorageItemPushButton.setIconSize(QtCore.QSize(24, 24))
-        self.cancelStorageItemPushButton.setObjectName("cancelStorageItemPushButton")
-        self.actionsStorageHorizontalLayout.addWidget(self.cancelStorageItemPushButton)
         self.verticalLayout_2.addLayout(self.actionsStorageHorizontalLayout)
         self.verticalLayout.addLayout(self.verticalLayout_2)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -275,10 +226,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Умное меню - Добавить покупку"))
         self.addStorageHeaderLabel.setText(_translate("MainWindow", "Заполните информацию о покупке"))
-        self.storeComboBox.setCurrentText(_translate("MainWindow", "Помидор"))
-        self.storeComboBox.setItemText(0, _translate("MainWindow", "Помидор"))
+        self.storeComboBox.setCurrentText(_translate("MainWindow", "Gjvb,lj"))
+        self.storeComboBox.setItemText(0, _translate("MainWindow", "Gjvb,lj"))
         self.unitStoregaItemLoabel.setText(_translate("MainWindow", "ед."))
         self.purchaseDateLabel.setText(_translate("MainWindow", "Дата покупки:"))
         self.addStoragePushButton.setText(_translate("MainWindow", "Сохранить"))

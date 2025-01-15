@@ -25,6 +25,15 @@
   <property name="windowTitle">
    <string>Умное меню - Добавить продукт</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../img/catCook.png</normaloff>../img/catCook.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+
+font: 8pt &quot;STXihei&quot;;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
     <size>
@@ -80,16 +89,18 @@
           <bool>true</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">margin-top: 8px;
-margin-bottom:8px;
-  width: 435px;
-  height: 24px;
-  color: #2d2c2c;
-  font-size: 20px;
-  font-family: Inter, &quot;Extra Bold&quot;;
-  font-weight: 800;
-  text-align: left;
-  vertical-align: top</string>
+          <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+
+width: 435px;
+height: 24px;
+
+font: 16pt &quot;Extra Bold&quot;;
+
+font-weight: 800;
+text-align: left;
+vertical-align: top</string>
          </property>
          <property name="text">
           <string>Заполните информацию о продукте</string>
@@ -115,7 +126,6 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
            </property>
@@ -157,7 +167,6 @@ top:8px;</string>
     height: 32px; /* Высота */
     padding-left: 8px; /* Отступ для текста */
     font-size: 14px; /* Размер шрифта */
-    font-family: Inter; /* Шрифт */
 }
 
 QComboBox::drop-down {
@@ -218,7 +227,6 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
            </property>
@@ -238,6 +246,18 @@ top:8px;</string>
          </item>
          <item>
           <widget class="QLineEdit" name="proteinsLineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>46</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>46</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">background-color:#ffffff;
 border-radius:4%;
@@ -253,7 +273,6 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
            </property>
@@ -273,6 +292,18 @@ top:8px;</string>
          </item>
          <item>
           <widget class="QLineEdit" name="fatsLineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>46</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>46</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">background-color:#ffffff;
 border-radius:4%;
@@ -288,7 +319,6 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
            </property>
@@ -308,6 +338,18 @@ top:8px;</string>
          </item>
          <item>
           <widget class="QLineEdit" name="carbohLineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>46</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>46</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">background-color:#ffffff;
 border-radius:4%;
@@ -323,7 +365,6 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
            </property>
@@ -360,8 +401,7 @@ border: none;
 
 text-align:left;
 vertical-align:text-top;
-font-size:12px;
-font-family:Inter;
+font-size:14px;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -369,12 +409,9 @@ outline:none;
 color:#30353b;
 text-align:left;
 vertical-align:text-top;
-font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
-outline:none;
-width:435px;</string>
+outline:none;</string>
            </property>
            <property name="text">
             <string>Срок годности:</string>
@@ -396,7 +433,7 @@ border:2px solid rgba(100, 100, 100, 25);
 
 color: #2d2c2c;
 
-width:360px;
+width:320px;
 height:32px;
 
 padding-left: 8px;
@@ -405,7 +442,6 @@ text-align:left;
 vertical-align:text-top;
 
 font-size:14px;
-font-family:Inter;
 left:12px;
 top:8px;</string>
            </property>
@@ -439,7 +475,6 @@ background: #ADDC81;
 text-align:center;
 vertical-align:center;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 font-weight: bold;
 

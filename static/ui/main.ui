@@ -22,12 +22,21 @@
     <height>695</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <family>STXihei</family>
+    <pointsize>8</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Умное меню</string>
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../icons/bx_dish.png</normaloff>../icons/bx_dish.png</iconset>
+    <normaloff>../img/catCook.png</normaloff>../img/catCook.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, 
@@ -35,7 +44,9 @@ stop:0  rgba(251,239,195,1),
  
 stop:0.6 rgba(230,230,230,1)
 
-stop:0.99 rgba(214,237,192,1));</string>
+stop:0.99 rgba(214,237,192,1));
+
+font: 8pt &quot;STXihei&quot;;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -85,8 +96,8 @@ border:none;
 width: 435px;
 height: 24px;
 
-font-size: 20px;
-font-family: Inter, &quot;Extra Bold&quot;;
+font: 16pt &quot;Extra Bold&quot;;
+
 font-weight: 800;
 text-align: left;
 vertical-align: top</string>
@@ -135,11 +146,9 @@ border-radius: 2%;</string>
       <widget class="QTableView" name="prodListTableView">
        <property name="styleSheet">
         <string notr="true">QTableView{
-margin-top: 8px;
 background-color: rgba(255, 255, 255, 50);
 border: 3px solid rgba(255, 255, 255, 75);
-border-top-left-radius: 0%;
-border-top-right-radius: 0%;
+margin-top: 8px;
 }
 
 QTableView::section {
@@ -156,7 +165,11 @@ border-bottom: rgba(255, 255, 255, 50);
 QTableView::item:selected {
 border-style: none;
 border-bottom: rgba(255, 255, 255, 50);
+background-color: rgba(255, 255, 255, 85);
 }</string>
+       </property>
+       <property name="showGrid">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -237,7 +250,6 @@ background: #ADDC81;
 text-align:center;
 vertical-align:center;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 font-weight: bold;
 
@@ -332,7 +344,7 @@ background: #AAAAFF;
       <x>30</x>
       <y>30</y>
       <width>271</width>
-      <height>601</height>
+      <height>491</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -370,8 +382,8 @@ border:none;
 width: 435px;
 height: 24px;
 
-font-size: 20px;
-font-family: Inter, &quot;Extra Bold&quot;;
+font: 16pt &quot;Extra Bold&quot;;
+
 font-weight: 800;
 text-align: left;
 vertical-align: top</string>
@@ -563,7 +575,6 @@ background: #ADDC81;
 text-align:center;
 vertical-align:center;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 font-weight: bold;
 
@@ -665,7 +676,7 @@ background: #AAAAFF;
       <x>320</x>
       <y>30</y>
       <width>811</width>
-      <height>371</height>
+      <height>341</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -677,40 +688,101 @@ border-radius: 10%;
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_6">
      <item>
-      <widget class="QLabel" name="MenuHeaderLabel">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>24</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>24</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: none;
+      <layout class="QHBoxLayout" name="headerProdHorizontalLayout_5">
+       <item>
+        <widget class="QLabel" name="MenuHeaderLabel">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Extra Bold</family>
+           <pointsize>16</pointsize>
+           <weight>99</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: none;
 color: #2d2c2c;
 border:none;
 
 width: 435px;
 height: 24px;
 
-font-size: 20px;
-font-family: Inter, &quot;Extra Bold&quot;;
+font: 16pt &quot;Extra Bold&quot;;
+
 font-weight: 800;
 text-align: left;
 vertical-align: top</string>
-       </property>
-       <property name="text">
-        <string>Меню на сегодня</string>
-       </property>
-      </widget>
+         </property>
+         <property name="text">
+          <string>Меню на сегодня</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="exportTxtMenuPushButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:none;
+height:24px;
+width:24px;
+padding:0px;
+position:relative;
+text-align: center;
+border: none;
+border-radius: 2%;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../img/bx_txt.svg</normaloff>../img/bx_txt.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <widget class="QLabel" name="infoMenuLabel">
@@ -724,27 +796,13 @@ margin-bottom:8px;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
-outline:none;
-width:435px;</string>
+outline:none;</string>
        </property>
        <property name="text">
-        <string>На сегодня у вас не составлено меню. 
+        <string>На сегодня меню нет(
 Для составления меню нажмите кнопку ниже</string>
-       </property>
-       <property name="scaledContents">
-        <bool>false</bool>
-       </property>
-       <property name="wordWrap">
-        <bool>true</bool>
-       </property>
-       <property name="margin">
-        <number>0</number>
-       </property>
-       <property name="indent">
-        <number>0</number>
        </property>
       </widget>
      </item>
@@ -752,6 +810,60 @@ width:435px;</string>
       <layout class="QHBoxLayout" name="actionsMenuHorizontalLayout">
        <item>
         <widget class="QPushButton" name="addMenuPushButton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+height:32px;
+width:auto;
+
+color: #30353B;
+background: #ADDC81;
+
+text-align:center;
+vertical-align:center;
+font-size:12px;
+line-height:auto;
+font-weight: bold;
+
+border-radius:4%;
+}
+
+QPushButton:hover {
+background: #AAAA81;
+border: 2px solid rgba(146, 146, 120, 75);
+}
+
+QPushButton:pressed{
+background: #AAAAFF;
+}
+
+
+</string>
+         </property>
+         <property name="text">
+          <string>Составить меню</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="deliteMenuTodayPushButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
 height:32px;
@@ -777,44 +889,1254 @@ border: 2px solid rgba(146, 146, 120, 75);
 
 QPushButton:pressed{
 background: #AAAAFF;
-}
-
-
-</string>
+}</string>
          </property>
          <property name="text">
-          <string>Составить меню</string>
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../img/bx_trash.svg</normaloff>../img/bx_trash.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
          </property>
         </widget>
        </item>
       </layout>
      </item>
      <item>
-      <widget class="QTableView" name="menuListTableView">
+      <widget class="QFrame" name="frame">
        <property name="styleSheet">
-        <string notr="true">QTableView{
-background-color: rgba(255, 255, 255, 50);
+        <string notr="true">background-color: rgba(255, 255, 255, 75);
 border: 3px solid rgba(255, 255, 255, 75);
 border-top-left-radius: 0%;
-border-top-right-radius: 0%;
-}
-
-QTableView::section {
-background-color: rgba(55, 55, 55);
-color: white;
-border: none;
-}
-
-QTableView::item {
-border-style: none;
-border-bottom: rgba(255, 255, 255, 50);
-}
-
-QTableView::item:selected {
-border-style: none;
-border-bottom: rgba(255, 255, 255, 50);
-}</string>
+border-top-right-radius: 0%;</string>
        </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="3" column="4">
+         <widget class="QLabel" name="menuTableLabel_fats_lunch">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QLabel" name="menuTableLabel_kalories_diner">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="menuTableHeaderLabel_kalories">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color: #2d2c2c;
+border:none;
+border-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>Ккал:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="2">
+         <widget class="QLabel" name="menuTableLabel_AllKPFC_kalories">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color: #2d2c2c;
+border:none;
+border-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLabel" name="menuTableLabel_dish_diner">
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>Нет ужина</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="menuTableLabel_dish_lunch">
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>Нет обеда</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="menuTableHeaderLabel_breakfast">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(220, 220, 220);
+color: #2d2c2c;
+border:none;
+border-top-left-radius: 10%;
+border-top-right-radius: 0%;
+border-bottom-left-radius: 0%;
+border-bottom-right-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>Завтрак</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="4">
+         <widget class="QLabel" name="menuTableLabel_fats_diner">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3">
+         <widget class="QLabel" name="menuTableLabel_proteins_diner">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="menuTableHeaderLabel_lunch">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(220, 220, 220);
+color: #2d2c2c;
+border:none;
+border-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>Обед</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="menuTableHeaderLabel_diner">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(220, 220, 220);
+color: #2d2c2c;
+border:none;
+border-top-left-radius: 0%;
+border-top-right-radius: 0%;
+border-bottom-right-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>Ужин</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QLabel" name="menuTableHeaderLabel_AllKPFC">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color: #2d2c2c;
+border:none;
+border-top-left-radius: 0%;
+border-top-right-radius: 0%;
+border-bottom-right-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>Итого:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="menuTableLabel_kalories_breakfast">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLabel" name="menuTableLabel_proteins_breakfast">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="5">
+         <widget class="QLabel" name="menuTableLabel_carboh_breakfast">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="4">
+         <widget class="QLabel" name="menuTableLabel_fats_breakfast">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="QLabel" name="menuTableLabel_proteins_lunch">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="5">
+         <widget class="QLabel" name="menuTableLabel_AllKPFC_carbons">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color: #2d2c2c;
+border:none;
+border-top-left-radius: 0%;
+border-top-right-radius: 0%;
+border-bottom-left-radius: 0%;
+border-bottom-right-radius: 10%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="5">
+         <widget class="QLabel" name="menuTableLabel_carboh_diner">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="menuTableLabel_dish_breakfast">
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>Нет завтрака</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="menuTableHeaderLabel_dish">
+          <property name="minimumSize">
+           <size>
+            <width>240</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>240</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color: #2d2c2c;
+border:none;
+border-top-left-radius: 10%;
+border-top-right-radius: 0%;
+border-bottom-left-radius: 0%;
+border-bottom-right-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>Блюдо:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::LinksAccessibleByMouse</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="menuTableHeaderLabel_proteins">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color: #2d2c2c;
+border:none;
+border-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>Б:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="5">
+         <widget class="QLabel" name="menuTableLabel_carboh_lunch">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="3">
+         <widget class="QLabel" name="menuTableLabel_AllKPFC_proteins">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color: #2d2c2c;
+border:none;
+border-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QLabel" name="menuTableHeaderLabel_fats">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color: #2d2c2c;
+border:none;
+border-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>Ж:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QLabel" name="menuTableHeaderLabel_carboh">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color: #2d2c2c;
+border:none;
+border-top-left-radius: 0%;
+border-top-right-radius: 10%;
+border-bottom-left-radius: 0%;
+border-bottom-right-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>У:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="4">
+         <widget class="QLabel" name="menuTableLabel_AllKPFC_fats">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color: #2d2c2c;
+border:none;
+border-radius: 0%;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;
+font-weight:700;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLabel" name="menuTableLabel_kalories_lunch">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </item>
     </layout>
@@ -863,8 +2185,8 @@ border:none;
 width: 435px;
 height: 24px;
 
-font-size: 20px;
-font-family: Inter, &quot;Extra Bold&quot;;
+font: 16pt &quot;Extra Bold&quot;;
+
 font-weight: 800;
 text-align: left;
 vertical-align: top</string>
@@ -912,7 +2234,31 @@ border-radius: 2%;</string>
      <item>
       <widget class="QTableView" name="dishListTableView">
        <property name="styleSheet">
-        <string notr="true">margin-top: 8px;</string>
+        <string notr="true">QTableView{
+background-color: rgba(255, 255, 255, 50);
+border: 3px solid rgba(255, 255, 255, 75);
+margin-top: 8px;
+}
+
+QTableView::section {
+background-color: rgba(55, 55, 55);
+color: white;
+border: none;
+}
+
+QTableView::item {
+border-style: none;
+border-bottom: rgba(255, 255, 255, 50);
+}
+
+QTableView::item:selected {
+border-style: none;
+border-bottom: rgba(255, 255, 255, 50);
+background-color: rgba(255, 255, 255, 85);
+}</string>
+       </property>
+       <property name="showGrid">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -993,7 +2339,6 @@ background: #ADDC81;
 text-align:center;
 vertical-align:center;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 font-weight: bold;
 
@@ -1085,9 +2430,9 @@ background: #AAAAFF;
     <property name="geometry">
      <rect>
       <x>320</x>
-      <y>420</y>
+      <y>390</y>
       <width>811</width>
-      <height>211</height>
+      <height>221</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1125,59 +2470,14 @@ border:none;
 width: 435px;
 height: 24px;
 
-font-size: 20px;
-font-family: Inter, &quot;Extra Bold&quot;;
+font: 16pt &quot;Extra Bold&quot;;
+
 font-weight: 800;
 text-align: left;
 vertical-align: top</string>
          </property>
          <property name="text">
           <string>История</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="exportTxtDishesPushButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color:none;
-height:24px;
-width:24px;
-padding:0px;
-position:relative;
-text-align: center;
-border: none;
-border-radius: 2%;</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../img/bx_sort-a-z.svg</normaloff>../img/bx_sort-a-z.svg</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
          </property>
         </widget>
        </item>
@@ -1216,7 +2516,52 @@ border-radius: 2%;</string>
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../img/bx_sort-a-z.svg</normaloff>../img/bx_sort-a-z.svg</iconset>
+           <normaloff>../img/bx_xls.svg</normaloff>../img/bx_xls.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="exportCsvDishesPushButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:none;
+height:24px;
+width:24px;
+padding:0px;
+position:relative;
+text-align: center;
+border: none;
+border-radius: 2%;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../img/bx_csv.svg</normaloff>../img/bx_csv.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1232,6 +2577,18 @@ border-radius: 2%;</string>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QFrame" name="history_card_frame_1">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>160</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>260</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgba(255, 255, 255, 30%);
 border: 1px solid  rgba(255, 255, 255, 40%);
@@ -1241,7 +2598,19 @@ border-radius: 10%;
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_8">
           <item>
-           <widget class="QLabel" name="dateLabel">
+           <widget class="QLabel" name="dateLabel_1">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>24</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">color:#b4b4b4;
 background-color: none;
@@ -1250,10 +2619,11 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
-outline:none;</string>
+outline:none;
+
+</string>
             </property>
             <property name="text">
              <string>11.11.2024, пн</string>
@@ -1269,7 +2639,16 @@ outline:none;</string>
           <item>
            <layout class="QVBoxLayout" name="listFoodVerticalLayout">
             <item>
-             <widget class="QLabel" name="breakfastLabel">
+             <widget class="QLabel" name="breakfastLabel_1">
+              <property name="font">
+               <font>
+                <family>STXihei</family>
+                <pointsize>-1</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
               <property name="styleSheet">
                <string notr="true">background-color: none;
 border: none;
@@ -1277,7 +2656,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1286,11 +2664,12 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+
+</string>
               </property>
               <property name="text">
                <string>Завтрака нет</string>
@@ -1304,7 +2683,7 @@ width:435px;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="lunchLabel">
+             <widget class="QLabel" name="lunchLabel_1">
               <property name="styleSheet">
                <string notr="true">background-color: none;
 border: none;
@@ -1312,7 +2691,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1321,11 +2699,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>Обеда нет</string>
@@ -1339,7 +2717,7 @@ width:435px;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="dinerLabel">
+             <widget class="QLabel" name="dinerLabel_1">
               <property name="styleSheet">
                <string notr="true">background-color: none;
 border: none;
@@ -1347,7 +2725,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1356,11 +2733,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>Ужина нет</string>
@@ -1378,7 +2755,7 @@ width:435px;</string>
           <item>
            <widget class="Line" name="cardBorderLine">
             <property name="styleSheet">
-             <string notr="true">background-color: rgba(173, 220, 130, 75)</string>
+             <string notr="true">background-color: rgb(220, 220, 220)</string>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Plain</enum>
@@ -1394,7 +2771,19 @@ width:435px;</string>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
-             <widget class="QLabel" name="kaloriesLabel">
+             <widget class="QLabel" name="kaloriesLabel_1">
+              <property name="minimumSize">
+               <size>
+                <width>84</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>84</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="styleSheet">
                <string notr="true">background-color: none;
 border: none;
@@ -1402,7 +2791,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1411,11 +2799,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>0 Ккал</string>
@@ -1429,7 +2817,7 @@ width:435px;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="foodvalueLabel">
+             <widget class="QLabel" name="foodvalueLabel_1">
               <property name="styleSheet">
                <string notr="true">background-color: none;
 border: none;
@@ -1437,7 +2825,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1446,11 +2833,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>Б: 0 Ж: 0 У: 0</string>
@@ -1473,6 +2860,18 @@ width:435px;</string>
        </item>
        <item>
         <widget class="QFrame" name="history_card_frame_2">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>160</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>260</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgba(255, 255, 255, 30%);
 border: 1px solid  rgba(255, 255, 255, 40%);
@@ -1483,6 +2882,18 @@ border-radius: 10%;
          <layout class="QVBoxLayout" name="verticalLayout_9">
           <item>
            <widget class="QLabel" name="dateLabel_2">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>24</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">color:#b4b4b4;
 background-color: none;
@@ -1491,7 +2902,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;</string>
@@ -1518,7 +2928,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1527,11 +2936,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>Завтрака нет</string>
@@ -1553,7 +2962,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1562,11 +2970,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>Обеда нет</string>
@@ -1588,7 +2996,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1597,11 +3004,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>Ужина нет</string>
@@ -1619,7 +3026,7 @@ width:435px;</string>
           <item>
            <widget class="Line" name="cardBorderLine_2">
             <property name="styleSheet">
-             <string notr="true">background-color: rgba(173, 220, 130, 75)</string>
+             <string notr="true">background-color: rgb(220, 220, 220)</string>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Plain</enum>
@@ -1636,6 +3043,18 @@ width:435px;</string>
            <layout class="QHBoxLayout" name="horizontalLayout_7">
             <item>
              <widget class="QLabel" name="kaloriesLabel_2">
+              <property name="minimumSize">
+               <size>
+                <width>84</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>84</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="styleSheet">
                <string notr="true">background-color: none;
 border: none;
@@ -1643,7 +3062,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1652,11 +3070,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>0 Ккал</string>
@@ -1678,7 +3096,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1687,11 +3104,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>Б: 0 Ж: 0 У: 0</string>
@@ -1714,6 +3131,18 @@ width:435px;</string>
        </item>
        <item>
         <widget class="QFrame" name="history_card_frame_3">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>160</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>260</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgba(255, 255, 255, 30%);
 border: 1px solid  rgba(255, 255, 255, 40%);
@@ -1724,6 +3153,18 @@ border-radius: 10%;
          <layout class="QVBoxLayout" name="verticalLayout_10">
           <item>
            <widget class="QLabel" name="dateLabel_3">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>24</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">color:#b4b4b4;
 background-color: none;
@@ -1732,7 +3173,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;</string>
@@ -1759,7 +3199,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1768,11 +3207,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>Завтрака нет</string>
@@ -1794,7 +3233,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1803,11 +3241,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>Обеда нет</string>
@@ -1829,7 +3267,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1838,11 +3275,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>Ужина нет</string>
@@ -1860,7 +3297,7 @@ width:435px;</string>
           <item>
            <widget class="Line" name="cardBorderLine_3">
             <property name="styleSheet">
-             <string notr="true">background-color: rgba(173, 220, 130, 75)</string>
+             <string notr="true">background-color: rgb(220, 220, 220)</string>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Plain</enum>
@@ -1877,6 +3314,18 @@ width:435px;</string>
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
              <widget class="QLabel" name="kaloriesLabel_3">
+              <property name="minimumSize">
+               <size>
+                <width>84</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>84</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="styleSheet">
                <string notr="true">background-color: none;
 border: none;
@@ -1884,7 +3333,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1893,11 +3341,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>0 Ккал</string>
@@ -1919,7 +3367,6 @@ border: none;
 text-align:left;
 vertical-align:text-top;
 font-size:12px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
@@ -1928,11 +3375,11 @@ color:#30353b;
 text-align:left;
 vertical-align:text-top;
 font-size:14px;
-font-family:Inter;
 line-height:auto;
 border-style:hidden;
 outline:none;
-width:435px;</string>
+width:435px;
+</string>
               </property>
               <property name="text">
                <string>Б: 0 Ж: 0 У: 0</string>
@@ -1956,6 +3403,73 @@ width:435px;</string>
       </layout>
      </item>
     </layout>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>540</y>
+      <width>90</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/catCook.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>540</y>
+      <width>211</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/dialog.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>550</y>
+      <width>141</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: none;
+color: #2d2c2c;
+border:none;
+margin-top: 8px;
+margin-bottom:8px;
+
+text-align:left;
+vertical-align:text-top;
+font-size:14px;
+line-height:auto;
+border-style:hidden;
+outline:none;</string>
+    </property>
+    <property name="text">
+     <string>Об авторе:
+Лочкарева Ирина
+ИСТ-213</string>
+    </property>
    </widget>
   </widget>
  </widget>

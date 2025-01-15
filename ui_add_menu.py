@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui_add_menu.ui'
+# Form implementation generated from reading ui file 'add_menu.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -17,6 +17,12 @@ class Ui_MainWindow(object):
         MainWindow.resize(480, 429)
         MainWindow.setMinimumSize(QtCore.QSize(480, 429))
         MainWindow.setMaximumSize(QtCore.QSize(480, 429))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../img/catCook.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+        MainWindow.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"font: 8pt \"STXihei\";")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
@@ -28,6 +34,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setContentsMargins(0, -1, -1, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.headerProdHorizontalLayout = QtWidgets.QHBoxLayout()
+        self.headerProdHorizontalLayout.setObjectName("headerProdHorizontalLayout")
         self.chooseMenuHeaderLabel = QtWidgets.QLabel(self.verticalLayoutWidget)
         self.chooseMenuHeaderLabel.setEnabled(True)
         self.chooseMenuHeaderLabel.setMinimumSize(QtCore.QSize(0, 36))
@@ -38,16 +46,15 @@ class Ui_MainWindow(object):
 "\n"
 "width: 435px;\n"
 "height: 24px;\n"
-"margin-top: 8px;\n"
-"margin-bottom:8px;\n"
 "\n"
-"font-size: 20px;\n"
-"font-family: Inter, \"Extra Bold\";\n"
+"font: 16pt \"Extra Bold\";\n"
+"\n"
 "font-weight: 800;\n"
 "text-align: left;\n"
 "vertical-align: top")
         self.chooseMenuHeaderLabel.setObjectName("chooseMenuHeaderLabel")
-        self.verticalLayout_2.addWidget(self.chooseMenuHeaderLabel)
+        self.headerProdHorizontalLayout.addWidget(self.chooseMenuHeaderLabel)
+        self.verticalLayout_2.addLayout(self.headerProdHorizontalLayout)
         self.itemsGridLayout = QtWidgets.QGridLayout()
         self.itemsGridLayout.setObjectName("itemsGridLayout")
         self.item3pushButton = QtWidgets.QPushButton(self.verticalLayoutWidget)
@@ -61,7 +68,6 @@ class Ui_MainWindow(object):
 "text-align:center;\n"
 "vertical-align:center;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "font-weight: bold;\n"
 "\n"
@@ -91,7 +97,6 @@ class Ui_MainWindow(object):
 "text-align:center;\n"
 "vertical-align:center;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "font-weight: bold;\n"
 "\n"
@@ -121,7 +126,6 @@ class Ui_MainWindow(object):
 "text-align:center;\n"
 "vertical-align:center;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "font-weight: bold;\n"
 "\n"
@@ -151,7 +155,6 @@ class Ui_MainWindow(object):
 "text-align:center;\n"
 "vertical-align:center;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "font-weight: bold;\n"
 "\n"
@@ -170,36 +173,6 @@ class Ui_MainWindow(object):
 "")
         self.item4pushButton.setObjectName("item4pushButton")
         self.itemsGridLayout.addWidget(self.item4pushButton, 2, 1, 1, 1)
-        self.item2pushButton = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        self.item2pushButton.setStyleSheet("QPushButton{\n"
-"height:32px;\n"
-"width:auto;\n"
-"\n"
-"color: #30353B;\n"
-"background: #ADDC81;\n"
-"\n"
-"text-align:center;\n"
-"vertical-align:center;\n"
-"font-size:12px;\n"
-"font-family:Inter;\n"
-"line-height:auto;\n"
-"font-weight: bold;\n"
-"\n"
-"border-radius:4%;\n"
-"border: 2 px solid #ADFF81;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"background: #AAAA81;\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"background: #AAAAFF;\n"
-"}\n"
-"\n"
-"")
-        self.item2pushButton.setObjectName("item2pushButton")
-        self.itemsGridLayout.addWidget(self.item2pushButton, 1, 1, 1, 1)
         self.item6pushButton = QtWidgets.QPushButton(self.verticalLayoutWidget)
         self.item6pushButton.setStyleSheet("QPushButton{\n"
 "height:32px;\n"
@@ -211,7 +184,6 @@ class Ui_MainWindow(object):
 "text-align:center;\n"
 "vertical-align:center;\n"
 "font-size:12px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "font-weight: bold;\n"
 "\n"
@@ -230,6 +202,35 @@ class Ui_MainWindow(object):
 "")
         self.item6pushButton.setObjectName("item6pushButton")
         self.itemsGridLayout.addWidget(self.item6pushButton, 3, 1, 1, 1)
+        self.item2pushButton = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.item2pushButton.setStyleSheet("QPushButton{\n"
+"height:32px;\n"
+"width:auto;\n"
+"\n"
+"color: #30353B;\n"
+"background: #ADDC81;\n"
+"\n"
+"text-align:center;\n"
+"vertical-align:center;\n"
+"font-size:12px;\n"
+"line-height:auto;\n"
+"font-weight: bold;\n"
+"\n"
+"border-radius:4%;\n"
+"border: 2 px solid #ADFF81;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background: #AAAA81;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"background: #AAAAFF;\n"
+"}\n"
+"\n"
+"")
+        self.item2pushButton.setObjectName("item2pushButton")
+        self.itemsGridLayout.addWidget(self.item2pushButton, 1, 1, 1, 1)
         self.verticalLayout_2.addLayout(self.itemsGridLayout)
         self.breakfastVerticalLayout = QtWidgets.QVBoxLayout()
         self.breakfastVerticalLayout.setObjectName("breakfastVerticalLayout")
@@ -255,7 +256,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -283,7 +283,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -311,7 +310,6 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "vertical-align:text-top;\n"
 "font-size:14px;\n"
-"font-family:Inter;\n"
 "line-height:auto;\n"
 "border-style:hidden;\n"
 "outline:none;\n"
@@ -328,13 +326,13 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Умное меню - составить меню"))
-        self.chooseMenuHeaderLabel.setText(_translate("MainWindow", "Что хотите на завтрак:"))
+        self.chooseMenuHeaderLabel.setText(_translate("MainWindow", "Что хотите на завтрак?"))
         self.item3pushButton.setText(_translate("MainWindow", "item3pushButton"))
         self.item5pushButton.setText(_translate("MainWindow", "item5pushButton"))
         self.item1pushButton.setText(_translate("MainWindow", "item1pushButton"))
         self.item4pushButton.setText(_translate("MainWindow", "item4pushButton"))
-        self.item2pushButton.setText(_translate("MainWindow", "item2pushButton"))
         self.item6pushButton.setText(_translate("MainWindow", "item6pushButton"))
+        self.item2pushButton.setText(_translate("MainWindow", "item2pushButton"))
         self.breakfastHeaderLabel.setText(_translate("MainWindow", "Завтрак:"))
         self.breakfastLabel.setText(_translate("MainWindow", "Пока нет..."))
         self.lunchHeaderLabel.setText(_translate("MainWindow", "Обед:"))
